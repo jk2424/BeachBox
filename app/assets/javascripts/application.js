@@ -46,7 +46,7 @@ $(document).ready(function(){
     getNumChild()
     pushChildBase()
   });
-  $("#entered-quantity").click(function(){
+  $("#box_checkout_button").click(function(){
 
   });
 });
