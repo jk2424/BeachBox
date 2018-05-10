@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_09_220451) do
+ActiveRecord::Schema.define(version: 2018_05_10_003416) do
 
   create_table "order_items", force: :cascade do |t|
     t.integer "orderitems_quantity"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 2018_05_09_220451) do
     t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "password_digest"
   end
 
 end
