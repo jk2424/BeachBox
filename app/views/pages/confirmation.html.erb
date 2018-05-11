@@ -22,38 +22,27 @@
             <span class="stepper-stepMarker">1</span>Build Your Box
           </div>
         </div>
-        <div class="stepper-step stepper-step-isActive">
+        <div class="stepper-step stepper-step-isValid">
           <div class="stepper-stepContent">
             <span class="stepper-stepMarker">2</span>Delivery
           </div>
         </div>
-        <div class="stepper-step stepper-step-isActive">
+        <div class="stepper-step stepper-step-isValid">
           <div class="stepper-stepContent">
             <span class="stepper-stepMarker">3</span>Checkout
           </div>
         </div>
       </div>
       <div class="stepper-content">
-        <div class="card card-image">
-          <div class="panel-group" id="accordion">
+        
+          <div>
+          <p>Hello World</p>
 
-            <!-- ACCORDION PANEL 1 (family/adults)-->
-            <%= render 'panel1' %>
-
-            <!-- ACCORDION PANEL 2 (# people) -->
-            <%= render 'panel2' %>
-
-            <!-- ACCORDION PANEL 3 (cart) -->
-            <%= render 'panel3' %>
-
-
-
-          </div>
         </div>
 
         <div class="stepper-actions">
-          <a href="#" class="btn btn-default btn-lg btn-simple mbn">Back</a>
-          <a href="/delivery" class="btn btn-info btn-lg btn-simple pull-right mbn">Continue</a>
+          <a href="/confirmation" class="btn btn-default btn-lg btn-simple mbn">Back</a>
+          <a href="/buildbox" class="btn btn-info btn-lg btn-simple pull-right mbn">Continue</a>
         </div>
       </div>
     </div>

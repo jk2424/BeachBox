@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2018_05_10_003416) do
     t.index ["product_id"], name: "index_order_items_on_product_id"
   end
 
-  create_table "orders", force: :cascade do |t|
+  create_table "order_info", force: :cascade do |t|
     t.string "street_address"
     t.string "city"
     t.string "state"

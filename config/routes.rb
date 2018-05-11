@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get '/products/new' => 'products#new'
   post 'products' => 'products#create'
   get '/buildbox' => 'pages#buildbox'
+  get '/delivery' => 'pages#delivery'
+  get '/confirmation' => 'pages#confirmation'
   get 'pages/secret'
 	root to: 'users#new'
 	get 'users/new' => 'users#new', as: :new_user

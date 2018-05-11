@@ -62,7 +62,7 @@ $(document).ready(function(){
             });
             $( ".counter-child" ).hide( "slow", function() {
                 });
-                $( ".suncreenchild" ).empty( function() {
+                $( "suncreenchild" ).empty( function() {
                     });
   });
 
