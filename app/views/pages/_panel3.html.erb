@@ -1,16 +1,21 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+
 <div class="panel panel-default">
   <div class="panel-heading" >
     <h4 class="panel-title">
-      <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-        Here's what you need...</a>
+      <div data-toggle="" data-parent="#accordion" href="#collapse3">
+        Here's what you need...</div>
       </h4>
     </div>
 
     <!-- Panel 3 body -->
-    <div id="collapse3" class="panel-collapse collapse" id="third_panel">
+    <div  class="panel-collapse collapse" id="collapse3">
       <div class="panel-body" >
 
-        <div class="suncreenchild"><%= image_tag("sunscreenTEST.jpg") %>
+        <div class="suncreenchild" id="suncreenchilddiv"><%= image_tag("sunscreenTEST.jpg") %>
           <div class="form-group">
             <label class="control-label col-md-5"><strong>Children Sunscreen</label>
               <div class="input-group number-spinner col-md-7">
@@ -69,6 +74,12 @@
                     </div>
                   </div>
                 </div>
+
+
+                <!-- <button type="button" class="btn btn-primary" id="back-modal" value='hide/show'>Back</button> -->
+
+             <span data-tooltip="Changes will be lost."><button type="button" class="btn btn-primary" id="back-to-2">Back</button></span>
+
                 <button type="button" class="btn btn-primary" id="box_checkout_button">Checkout</button>
               </div>
             </div>

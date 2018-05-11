@@ -11,8 +11,8 @@
 // about supported directives.
 //
 
-//= require jquery
-//= require bootstrap-sprockets
+// = require jquery
+// = require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
 
@@ -38,17 +38,67 @@ console.log("hello world");
 //
 //     });
 
+
+
+
 // **** Cart quantity
 
 $(document).ready(function(){
-  $("#entered-quantity").click(function(){
-    getNumAdult()
-    getNumChild()
-    pushChildBase()
-  });
-  $("#box_checkout_button").click(function(){
 
+
+  $("#box_family").click(function(){
+    console.log("hello")
+    $( "#collapse2" ).show( "slow", function() {
+        });
+        $( "#collapse1" ).hide( "slow", function() {
+            });
   });
+
+  $("#box_adult").click(function(){
+    console.log("hello")
+    $( "#collapse2" ).show( "slow", function() {
+        });
+        $( "#collapse1" ).hide( "slow", function() {
+            });
+            $( ".counter-child" ).hide( "slow", function() {
+                });
+                $( ".suncreenchild" ).empty( function() {
+                    });
+  });
+
+  $("#entered-quantity").click(function(){
+    var numChild = $("#child").val();
+    if (numChild==0) {
+      $( ".suncreenchild" ).empty( function() {
+      });
+        }
+    pushAdultBase(),
+    pushChildBase(),
+    pushFamilyBase(),
+    $( "#collapse3" ).show( "slow", function() {
+        });
+        $( "#collapse2" ).hide( "slow", function() {
+            });
+  });
+
+  $("#back-to-1").click(function(){
+    console.log("hello")
+
+    $( "#collapse2" ).hide( "slow", function() {
+        });
+        location.reload();
+        $( "#collapse1" ).show( "slow", function() {
+            });
+  });
+
+  $("#back-to-2").click(function(){
+    console.log("hello")
+    $( "#collapse2" ).show( "slow", function() {
+        });
+        $( "#collapse3" ).hide( "slow", function() {
+            });
+  });
+
 });
 
 function getNumAdult(){
@@ -63,10 +113,36 @@ function getNumChild(){
 
 };
 
-function pushChildBase(){
+function getNumFam(){
+  var numAdult = $("#adult").val()
   var numChild = $("#child").val()
+  var getNumFam = parseInt("numAdult")+parseInt("numChild")
+
+};
+
+function pushAdultBase(){
+  var numAdult = Math.ceil($("#adult").val()/4)
+  console.log(numAdult)
+  $( "#sunscreen-adult_qty" ).val(numAdult)
+
+};
+
+function pushChildBase(){
+  var numChild = Math.ceil($("#child").val()/4)
   console.log(numChild)
   $( "#sunscreen-child_qty" ).val(numChild)
+
+};
+
+function pushFamilyBase(){
+  var numAdult = $("#adult").val()
+  var numChild = $("#child").val()
+  var getNumFam = parseInt(numAdult)+parseInt(numChild)
+  console.log(getNumFam)
+  $( "#towel_qty" ).val(getNumFam);
+  $( "#chair_qty" ).val(getNumFam);
+
+
 };
 
 
