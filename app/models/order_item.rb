@@ -12,13 +12,13 @@ class OrderItem < ActiveRecord::Base
     if persisted?
       self[:unit_price]
     else
-      product.price
+      product.product_price
     end
   end
 
-  def total_price
-    unit_price * orderitems_quantity
-  end
+  # def total_price
+  #   unit_price * orderitems_quantity
+  # end
 
 private
   def product_present
@@ -35,6 +35,6 @@ private
 
   def finalize
     self[:unit_price] = unit_price
-    self[:total_price] = orderitems_quantity * self[:unit_price]
+    self[:total_price] = self[:orderitems_quantity] * self[:unit_price]
   end
 end
