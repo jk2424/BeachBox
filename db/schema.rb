@@ -10,9 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_12_010717) do
+ActiveRecord::Schema.define(version: 2018_05_12_014424) do
 
-  create_table "Order", force: :cascade do |t|
+  create_table "Order_Statuses", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "Orders", force: :cascade do |t|
     t.string "street_address"
     t.string "city"
     t.string "state"
@@ -26,10 +32,10 @@ ActiveRecord::Schema.define(version: 2018_05_12_010717) do
     t.decimal "tax"
     t.decimal "shipping"
     t.decimal "total"
-    t.index ["user_id"], name: "index_Order_on_user_id"
+    t.index ["user_id"], name: "index_Orders_on_user_id"
   end
 
-  create_table "OrderItem", force: :cascade do |t|
+  create_table "order_items", force: :cascade do |t|
     t.integer "orderitems_quantity"
     t.integer "order_id"
     t.integer "product_id"
@@ -37,14 +43,8 @@ ActiveRecord::Schema.define(version: 2018_05_12_010717) do
     t.datetime "updated_at", null: false
     t.decimal "unit_price"
     t.decimal "total_price"
-    t.index ["order_id"], name: "index_OrderItem_on_order_id"
-    t.index ["product_id"], name: "index_OrderItem_on_product_id"
-  end
-
-  create_table "OrderStatus", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["product_id"], name: "index_order_items_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|

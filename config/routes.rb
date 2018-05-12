@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get '/products/new' => 'products#new'
-  post 'products' => 'products#create'
+  resources :products, only: [:index]
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
   get '/buildbox' => 'pages#buildbox'
   get '/delivery' => 'pages#delivery'
   get '/confirmation' => 'pages#confirmation'
