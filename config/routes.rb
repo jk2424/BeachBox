@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'git/add'
+  get 'git/.'
   get 'pages/secret'
 	root to: 'users#new'
 	get 'users/new' => 'users#new', as: :new_user
