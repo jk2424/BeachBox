@@ -30,7 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
-
+gem 'geocoder'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
