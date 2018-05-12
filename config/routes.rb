@@ -20,5 +20,6 @@ Rails.application.routes.draw do
 	# delete action to log out:
 	delete '/logout' => 'sessions#destroy'
 
+  resources :charges
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
