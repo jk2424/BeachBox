@@ -123,14 +123,14 @@ function getNumFam(){
 function pushAdultBase(){
   var numAdult = Math.ceil($("#adult").val()/4)
   console.log(numAdult)
-  $( "#sunscreen-adult_qty" ).val(numAdult)
+  $( "#adult_suncreen_qty" ).val(numAdult)
 
 };
 
 function pushChildBase(){
   var numChild = Math.ceil($("#child").val()/4)
   console.log(numChild)
-  $( "#sunscreen-child_qty" ).val(numChild)
+  $( "#children_sunscreen_qty" ).val(numChild)
 
 };
 
