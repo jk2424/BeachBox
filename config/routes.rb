@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
   get '/carts/show' => 'carts#show', as: :mycart
-  get '/buildbox' => 'pages#buildbox'
+  get '/buildbox' => 'pages#index'
   get '/delivery' => 'pages#delivery'
   get '/confirmation' => 'pages#confirmation'
   get 'pages/secret'

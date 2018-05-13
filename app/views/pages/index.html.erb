@@ -22,7 +22,7 @@
             <span class="stepper-stepMarker">1</span>Build Your Box
           </div>
         </div>
-        <div class="stepper-step stepper-step-isValid">
+        <div class="stepper-step stepper-step-isActive">
           <div class="stepper-stepContent">
             <span class="stepper-stepMarker">2</span>Delivery
           </div>
@@ -35,21 +35,26 @@
       </div>
       <div class="stepper-content">
 
-          <div>
-            <%= form_for :order do |f| %>
-  Enter Address: <%= f.text_field :street_address %><br />
-    <%= f.submit %>
-  <% end %>
-        </div>
+          <div class="panel-group" id="accordion">
 
-        <p><button onclick="geoFindMe()">Show my location</button></p>
-<div id="out">
+            <!-- ACCORDION PANEL 1 (family/adults)-->
+            <%= render 'panel1' %>
+
+            <!-- ACCORDION PANEL 2 (# people) -->
+            <%= render 'panel2' %>
+
+            <!-- ACCORDION PANEL 3 (cart) -->
+            <%= render 'panel3' %>
 
 
 
-      </div>
+          </div>
+
+
+
+
     </div>
-    <%= link_to '<button type="button" class="btn btn-primary"">Next</button>'.html_safe, '/confirmation' %>
+  </div>
 
 
 
