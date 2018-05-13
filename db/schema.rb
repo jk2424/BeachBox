@@ -12,29 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2018_05_12_014424) do
 
-  create_table "Order_Statuses", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "Orders", force: :cascade do |t|
-    t.string "street_address"
-    t.string "city"
-    t.string "state"
-    t.string "zip"
-    t.string "status"
-    t.string "shipment_method"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.decimal "subtotal"
-    t.decimal "tax"
-    t.decimal "shipping"
-    t.decimal "total"
-    t.index ["user_id"], name: "index_Orders_on_user_id"
-  end
-
   create_table "order_items", force: :cascade do |t|
     t.integer "orderitems_quantity"
     t.integer "order_id"
@@ -45,6 +22,19 @@ ActiveRecord::Schema.define(version: 2018_05_12_014424) do
     t.decimal "total_price"
     t.index ["order_id"], name: "index_order_items_on_order_id"
     t.index ["product_id"], name: "index_order_items_on_product_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "street_address"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "status"
+    t.string "shipment_method"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -58,7 +48,6 @@ ActiveRecord::Schema.define(version: 2018_05_12_014424) do
     t.integer "product_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "active"
   end
 
   create_table "users", force: :cascade do |t|
