@@ -1,39 +1,15 @@
-<div class="well">
-
-  <div class="row">
-    <div class="col-xs-8">
-      <h4><%= product.product_name %></small></h4>
-
-    <div>
-
-      <%= form_for order_item, remote: true do |f| %>
-      <div class="unit-price">Unit Price: <span style="color: green"><%= number_to_currency product.product_price %></span>
-      </div>
-      <div class="input-group number-spinner col-md-7">
-        <span class="input-group-btn">
-          <a class="btn btn-danger" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></a>
-        </span>
-        <div class="input-group">
-          <!-- <input type="text" disabled name="sunscreen-adult_qty" id="sunscreen-adult_qty" class="form-control text-center" value="1" max=9 min=0> -->
-          <%= f.number_field :orderitems_quantity, value: 1, class: "form-control text-center", min: 0 %>
-</div>
-
-        <div class="input-group-btn">
-          <% f.hidden_field :product_id, value: product.id %>
-          <%= button_tag(type: 'update', class: "btn btn-primary") do %>
-          <a class="btn btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></a>
-          <% end %>
-
-        </div>
-
-      </div>
-
-
-
-<% end %>
-</div>
-        </div>
-
-    </div>
-
-  </div>
+<% p_name = product.product_name.parameterize.underscore %>
+<div class="<%= p_name %>" data-target="<%= p_name %>"><%= image_tag(product.product_image_url) %>
+   <div class="form-group">
+     <label class="control-label col-md-5"><strong><%= product.product_name %></label>
+       <div class="input-group number-spinner col-md-7">
+         <span class="input-group-btn">
+           <a class="btn btn-danger" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></a>
+         </span>
+         <input type="text" disabled name="<%= p_name %>_qty" id="<%= p_name %>_qty" class="form-control text-center" value="1" max=9 min=0>
+         <span class="input-group-btn">
+           <a class="btn btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></a>
+         </span>
+       </div>
+     </div>
+   </div>
