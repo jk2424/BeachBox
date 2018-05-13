@@ -16,7 +16,7 @@ class OrderItemsController < ApplicationController
 
 
     # @order_item.update_attribute(:orderitems_quantity, order_item_params[:orderitems_quantity])
-    redirect_to :mycart
+    # redirect_to :mycart
   end
 
   def destroy
