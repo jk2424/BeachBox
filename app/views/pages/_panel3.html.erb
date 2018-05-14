@@ -16,17 +16,18 @@
 
           <% @products.each do |product| %>
 
-            <%= render "product_row", product: product, order_item: @order_item %>
+          <%= render "product_row", product: product, order_item: @order_item %>
           <% end %>
         </div>
 
 
 
+        
+      </div>
+      <span data-tooltip="  Changes will be lost.">
+        <button type="button" class="btn btn-primary" id="back-to-2">Back</button>
+      </span>
+      <%= link_to '<button type="button" class="btn btn-primary cart-update">Next</button>'.html_safe, '/delivery' %>
+    </div>
 
-              </div>
-              <span data-tooltip="  Changes will be lost."><button type="button" class="btn btn-primary" id="back-to-2">Back</button></span>
-<%= link_to '<button type="button" class="btn btn-primary cart-update">Next</button>'.html_safe, '/delivery' %>
-
-            </div>
-
-          </div>
+  </div>
