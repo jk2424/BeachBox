@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <meta charset="utf-8">
+    <title>Cart</title>
+
+  </head>
+  <body>
+
+      <div class="container">
+        <div class="stepper">
+
+            <div class="stepper-step stepper-step-isValid">
+              <div class="stepper-stepContent">
+                <span class="stepper-stepMarker">1</span>Build Your Box
+              </div>
+            </div>
+            <div class="stepper-step stepper-step-isValid">
+              <div class="stepper-stepContent">
+                <span class="stepper-stepMarker">2</span>Delivery
+              </div>
+            </div>
+            <div class="stepper-step stepper-step-isActive">
+              <div class="stepper-stepContent">
+                <span class="stepper-stepMarker">3</span>Checkout
+              </div>
+            </div>
+          </div>
+          <div class="stepper-content">
+
+
+          <div class="shopping-cart">
+            <%= render "shopping_cart" %>
+          </div>
+          <%= current_order.subtotal %>
+
+    </div>
+
+
+
+
+        <%= link_to '<button type="button" class="btn btn-primary"">Back</button>'.html_safe, '/delivery' %>
+      </div>
+    </div>
+
+  </body>
+</html>

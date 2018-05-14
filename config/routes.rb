@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :products, only: [:index]
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
+  get '/carts/show' => 'carts#show', as: :mycart
+  get '/buildbox' => 'pages#index'
+  get '/delivery' => 'pages#delivery'
+  get '/confirmation' => 'pages#confirmation'
   get 'pages/secret'
 	root to: 'users#home'
 	get 'users/new' => 'users#new', as: :new_user
