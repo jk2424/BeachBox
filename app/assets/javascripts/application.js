@@ -70,7 +70,7 @@ $(document).ready(function(){
       },
       dataType: "JSON"
     });
-    console.log("==== products", products)
+
   });
 
   $("#box_family").click(function(){
