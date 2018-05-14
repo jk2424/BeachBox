@@ -22,7 +22,7 @@ class OrderItemsController < ApplicationController
   end
 
   def update
-    #current_order = Order.find(session[:order_id])
+    current_order = Order.find(session[:order_id])
     @order = current_order
     @order_item = @order.order_items.find(params[:id])
     @order_item.update_attribute(:orderitems_quantity, order_item_params[:orderitems_quantity])
