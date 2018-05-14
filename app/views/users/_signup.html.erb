@@ -1,8 +1,5 @@
 <!-- <h1>Register</h1> -->
-<br>
-<br>
-
-<%= form_for :user do |f| %>
+<%= form_for :user , url: '/users' do |f| %>
   <div>
     <%= f.label :first_name %>
     <%= f.text_field :first_name, autofocus: true %>
