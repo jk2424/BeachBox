@@ -1,26 +1,25 @@
-<!-- <h1>Register</h1> -->
-<%= form_for :user , url: '/users' do |f| %>
+<%= form_tag login_path do %>
   <div>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name, autofocus: true %>
+    <%= label_tag :first_name %>
+    <%= text_field_tag :first_name, nil, autofocus: true %>
   </div>
   <div>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= label_tag :email %>
+    <%= text_field_tag :email %>
   </div>
   <div>
-    <%= f.label :phone_number %>
-    <%= f.text_field :phone_number %>    
+    <%= label_tag :phone_number %>
+    <%= text_field_tag :phone_number %>    
   </div>
   <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
   </div>
   <div>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%= label_tag :password_confirmation %>
+    <%= password_field_tag :password_confirmation %>
   </div>
   <div>
-    <%= f.submit "Sign up!" %>
+    <%= submit_tag "Sign up!" %>
   </div>
 <% end %>
