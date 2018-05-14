@@ -1,9 +1,7 @@
 class OrderItemsController < ApplicationController
   def create
     @order = current_order
-    @order.status = OrderStatus.in_progress.id
-    # we need a way to determine when is a collection of items
-    if params.key?("multiple_items")
+    @order.status = OrderStatus.in_progress.id    if params.key?("multiple_items")
       products = JSON.parse(params[:products])
       products.each do |product|
         existing_item = @order.order_items.find_by_product_id(product["product_id"])
@@ -42,6 +40,7 @@ class OrderItemsController < ApplicationController
     @order_items = @order.order_items
     redirect_to cart_path
   end
+
 
 #   def destroy
 #   order = session['order']
