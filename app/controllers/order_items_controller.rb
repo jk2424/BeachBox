@@ -1,6 +1,6 @@
 class OrderItemsController < ApplicationController
   def create
-    @order = current_order
+    if @order = current_order
     @order.status = OrderStatus.in_progress.id    if params.key?("multiple_items")
       products = JSON.parse(params[:products])
       products.each do |product|
@@ -35,9 +35,9 @@ class OrderItemsController < ApplicationController
 
   def destroy
     @order = current_order
+    @order_items = @order.order_items
     @order_item = @order.order_items.find(params[:id])
     @order_item.destroy
-    @order_items = @order.order_items
     redirect_to cart_path
   end
 
