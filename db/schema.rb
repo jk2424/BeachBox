@@ -10,25 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2018_05_13_143530) do
 
-  create_table "order_items", force: :cascade do |t|
-    t.integer "orderitems_quantity"
-    t.integer "order_id"
-    t.integer "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.decimal "unit_price"
-    t.decimal "total_price"
-    t.index ["order_id"], name: "index_order_items_on_order_id"
-    t.index ["product_id"], name: "index_order_items_on_product_id"
-  end
-
-
-
-
-  create_table "orders", force: :cascade do |t|
+  create_table "Order", force: :cascade do |t|
     t.string "street_address"
     t.string "city"
     t.string "state"
@@ -38,7 +22,21 @@ ActiveRecord::Schema.define(version: 2018_05_13_143530) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_orders_on_user_id"
+    t.decimal "subtotal"
+    t.decimal "tax"
+    t.decimal "shipping"
+    t.decimal "total"
+    t.index ["user_id"], name: "index_Order_on_user_id"
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer "orderitems_quantity"
+    t.integer "order_id"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["product_id"], name: "index_order_items_on_product_id"
   end
 
   create_table "order_statuses", force: :cascade do |t|
@@ -58,6 +56,7 @@ ActiveRecord::Schema.define(version: 2018_05_13_143530) do
     t.integer "product_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "active"
   end
 
   create_table "users", force: :cascade do |t|
