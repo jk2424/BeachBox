@@ -1,25 +1,26 @@
-<%= form_tag login_path do %>
+<% @user = User.new %>
+<%= form_for @user, url: users_path, method: 'POST' do |f| %>
   <div>
-    <%= label_tag :first_name %>
-    <%= text_field_tag :first_name, nil, autofocus: true %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, autofocus: true %>
   </div>
   <div>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
   </div>
   <div>
-    <%= label_tag :phone_number %>
-    <%= text_field_tag :phone_number %>    
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number %>    
   </div>
   <div>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
   </div>
   <div>
-    <%= label_tag :password_confirmation %>
-    <%= password_field_tag :password_confirmation %>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
   </div>
   <div>
-    <%= submit_tag "Sign up!" %>
+    <%= f.submit "Sign up!" %>
   </div>
 <% end %>
