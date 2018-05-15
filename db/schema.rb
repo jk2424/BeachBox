@@ -10,24 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_13_143530) do
-
-  create_table "Order", force: :cascade do |t|
-    t.string "street_address"
-    t.string "city"
-    t.string "state"
-    t.string "zip"
-    t.string "status"
-    t.string "shipment_method"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.decimal "subtotal"
-    t.decimal "tax"
-    t.decimal "shipping"
-    t.decimal "total"
-    t.index ["user_id"], name: "index_Order_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2018_05_15_214843) do
 
   create_table "order_items", force: :cascade do |t|
     t.integer "orderitems_quantity"
@@ -43,6 +26,23 @@ ActiveRecord::Schema.define(version: 2018_05_13_143530) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "street_address"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "status"
+    t.string "shipment_method"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal "subtotal"
+    t.decimal "tax"
+    t.decimal "shipping"
+    t.decimal "total"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
