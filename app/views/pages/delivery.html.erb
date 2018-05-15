@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
 
 
   <meta charset="utf-8">
@@ -16,48 +16,46 @@
 
   <div class="container">
     <div class="stepper">
-      <div class="stepper-steps">
-        <div class="stepper-step stepper-step-isValid">
-          <div class="stepper-stepContent">
-            <span class="stepper-stepMarker">1</span>Build Your Box
-          </div>
-        </div>
-        <div class="stepper-step stepper-step-isValid">
-          <div class="stepper-stepContent">
-            <span class="stepper-stepMarker">2</span>Delivery
-          </div>
-        </div>
-        <div class="stepper-step stepper-step-isActive">
-          <div class="stepper-stepContent">
-            <span class="stepper-stepMarker">3</span>Checkout
-          </div>
+
+      <div class="stepper-step stepper-step-isValid">
+        <div class="stepper-stepContent">
+          <span class="stepper-stepMarker">1</span>Build Your Box
         </div>
       </div>
-      <div class="stepper-content">
-
-          <div>
-            <%= form_for :order do |f| %>
-  Enter Address: <%= f.text_field :street_address %><br />
-    <%= f.submit %>
-  <% end %>
+      <div class="stepper-step stepper-step-isValid">
+        <div class="stepper-stepContent">
+          <span class="stepper-stepMarker">2</span>Delivery
         </div>
-
-        <p><button onclick="geoFindMe()">Show my location</button></p>
-<div id="out">
-
-
-        <div class="stepper-actions">
-          <a href="/confirmation" class="btn btn-default btn-lg btn-simple mbn">Back</a>
-          <a href="/buildbox" class="btn btn-info btn-lg btn-simple pull-right mbn">Continue</a>
+      </div>
+      <div class="stepper-step stepper-step-isActive">
+        <div class="stepper-stepContent">
+          <span class="stepper-stepMarker">3</span>Checkout
         </div>
       </div>
     </div>
-  </div>
+    <div class="stepper-content">
+
+      <div>
+        <%= form_for :order do |f| %>
+        Enter Address: <%= f.text_field :street_address %><br />
+        <%= f.submit %>
+        <% end %>
+      </div>
+
+      <p><button onclick="geoFindMe()">Show my location</button></p>
+      <div id="out">
+
+
+
+      </div>
+    </div>
+    <%= link_to '<button type="button" class="btn btn-primary"">Back</button>'.html_safe, '/buildbox' %>
+    <%= link_to '<button type="button" class="btn btn-primary"">Next</button>'.html_safe, '/cart' %>
 
 
 
 
 
-</body>
+  </body>
 
-</html>
+  </html>

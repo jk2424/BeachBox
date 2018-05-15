@@ -4,6 +4,7 @@
     <title>Beachbox</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
       <% if request.ssl? %>
         <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
         <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
@@ -11,17 +12,16 @@
         <%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
         <%= javascript_include_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
       <% end %>
-      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-
-      <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
   </head>
 
   <body>
-<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
-      <% if current_user %>
+    <% if current_user %>
       <!-- current_user will return true if a user is logged in -->
       <%= "Logged in as #{current_user.email}" %> | <%= link_to 'Home', root_path %> | <%= link_to 'Log Out', logout_path, method: :delete %>
     <% else %>
@@ -41,7 +41,7 @@
       <%# ----- end of added lines ----- %>
     <%= yield %>
 
-  
+
 
   </body>
 </html>

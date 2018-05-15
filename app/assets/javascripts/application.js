@@ -11,8 +11,9 @@
 // about supported directives.
 //
 
-// = require jquery
-// = require bootstrap-sprockets
+//# require jquery
+//# require bootstrap-sprockets
+//= require rails-ujs
 //= require turbolinks
 //= require_tree .
 
@@ -45,6 +46,32 @@ console.log("hello world");
 
 $(document).ready(function(){
 
+  // [ { name: 'Chair', qty: 5 }, { name: 'Towel', qty: 4} ]
+  $(".cart-update").click(function(e){
+    e.preventDefault();
+    var products = $(".product-list .item_qty").map(function(index, item){
+      return {
+        name: item.dataset.name,
+        orderitems_quantity: item.value,
+        product_id: item.dataset.id,
+      }
+    })
+    $.ajax({
+      type: "POST",
+      url: "/order_items",
+      data: {products: JSON.stringify(products.get()), multiple_items: true},
+      success: function(data){
+        if(data.success) {
+          window.location.href = "/delivery"
+        }
+      },
+      error: function(){
+        alert('failure');
+      },
+      dataType: "JSON"
+    });
+
+  });
 
   $("#box_family").click(function(){
     console.log("hello")
@@ -123,14 +150,14 @@ function getNumFam(){
 function pushAdultBase(){
   var numAdult = Math.ceil($("#adult").val()/4)
   console.log(numAdult)
-  $( "#sunscreen-adult_qty" ).val(numAdult)
+  $( "#adult_suncreen_qty" ).val(numAdult)
 
 };
 
 function pushChildBase(){
   var numChild = Math.ceil($("#child").val()/4)
   console.log(numChild)
-  $( "#sunscreen-child_qty" ).val(numChild)
+  $( "#children_sunscreen_qty" ).val(numChild)
 
 };
 
@@ -169,3 +196,9 @@ $(document).on('click', '.number-spinner a', function () {
    $('#people').val(total);
    input.val(oldValue);
  });
+
+ // you going to click the next button
+  // then you will create a array of object
+  // [ { name: 'Chair', qty: 5 }, { name: 'Towel', qty: 4} ]
+// ^^ is going to be send through ajax to the BE
+// in the BE then we save that to the cart!

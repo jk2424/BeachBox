@@ -1,6 +1,10 @@
 class PagesController < ApplicationController
   before_action :authorize, only: [:secret]
 
+  def show
+    @order_items = current_order.order_items
+  end
+
   def buildbox
     def create
       @order = current_order
@@ -18,8 +22,12 @@ class PagesController < ApplicationController
 
 
 
-  end
 
+  end
+  def index
+    @products = Product.all
+    @order_item = current_order.order_items.new
+  end
   private
 
   def order_item_params
