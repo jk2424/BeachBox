@@ -21,12 +21,24 @@ class UsersController < ApplicationController
 
   def home
   end
+  
+  def account_profile
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params) 
+      redirect_to account_path
+    else 
+      render :edit
+    end 
+  end
 
 private
 
   def user_params
     # strong parameters - whitelist of allowed fields #=> permit(:name, :email, ...)
     # that can be submitted by a form to the user model #=> require(:user)
-    params.require(:user).permit(:first_name, :last_name, :phone_number, :email, :password, :password_confirmation)
+    params.require(:user).permit(:id, :first_name, :last_name, :phone_number, :email, :password, :password_confirmation)
   end
 end
