@@ -138,7 +138,12 @@
 
 
  // ***** BOOTSTRAP ACCORDION
-
+// 
+// .productphotos{
+//   height: 300px;
+//   width: 300px
+//
+// }
  .panel-collapse{
    margin:20px;
  }
@@ -155,7 +160,9 @@
 
  }
 
-
+.glyphicon{
+  padding-top: 5px;
+}
  .number-spinner{
    float: right;
  }
@@ -168,6 +175,7 @@
  .input-group{
    width:100px !important;
    margin-bottom: 50px !important;
+   height: 20px !important;
 
  }
  .counter{
@@ -177,13 +185,17 @@
  }
 
  .btn-info{
-
+   height: 40px;
    float: left;
  }
 
+ .btn-danger{
+   height: 40px;
+ }
+
  .form-control.text-center {
-   width: 100px !important;
-   height: auto;
+   width: 200px !important;
+   height: 40px;
 
 
  }

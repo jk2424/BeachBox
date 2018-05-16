@@ -22,10 +22,24 @@
  	padding-bottom: 28%;
  }
 
+ .modal-dialog {
+     max-width: 300px !important;
+     margin: 1.75rem auto;
+ }
+
+ .modal-dialog-centered {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-bottom: 300px;
+    min-height: calc(100% - (.5rem * 2));
+}
+
  .jumbotron img{
  	display: block;
  	margin: 0 auto;
- 	height: 180px;
+ 	width: 100%;
  }
 
  .jumbotron h2{
