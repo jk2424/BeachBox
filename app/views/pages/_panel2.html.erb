@@ -1,52 +1,55 @@
-<div class="panel panel-default" >
-  <div class="panel-heading" >
 
-    <h4 class="panel-title">
-      <div data-toggle="" data-parent="#accordion" href="#collapse2">
-        How many people?</div>
+  <div class="card-header" id="headingTwo">
+
+
+      <h4 class="panel-title" >
+        <div data-toggle="" aria-expanded="true" aria-controls="collapseTwo">
+          How many people?</div>
       </h4>
 
     </div>
 
     <!-- Panel 2 body -->
-    <div id="collapse2" class="panel-collapse collapse" >
-      <div class="panel-body" >
+    <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body" >
 
-        <div class="form-group">
+<div class="form-group">
+<br>
           <div class="counter-adult">
+
             <div class="control-label"><strong>Adult</strong> <i> (above 13)</i></div>
-            <br>
+<br>
             <div class="counter"><div class="input-group number-spinner">
               <span class="input-group-btn">
-                <a class="btn btn-danger" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></a>
+                <a class="btn btn-danger" data-dir="dwn"><i class="fas fa-minus"></i></a>
               </span>
               <input type="text" disabled name="adult" id="adult" class="form-control text-center" value="1" max=9 min=1>
               <span class="input-group-btn">
-                <a class="btn btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></a>
-              </span>
+                <a class="btn btn-info" data-dir="up"><i class="fas fa-plus"></i></a>              </span>
             </div>
-
           </div>
+          <br><br>
         </div>
 
-      </div>
 
-      <br>
-      <div class="form-group">
+
+
         <br>
         <div class="counter-child">
+          <br>
           <div class="control-label"><strong>Child</strong><i> (1 - 13)</i></div>
           <br>
           <div class="counter"><div class="input-group number-spinner">
             <span class="input-group-btn">
-              <a class="btn btn-danger" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></a>
+              <a class="btn btn-danger" data-dir="dwn"><i class="fas fa-minus"></i></a>
             </span>
             <input type="text" disabled name="child" id="child" class="form-control text-center" value="0" max=9 min=0>
             <span class="input-group-btn">
-              <a class="btn btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></a>
+              <a class="btn btn-info" data-dir="up"><i class="fas fa-plus"></i></a>
             </div>
           </div>
         </div>
+
 
 <br>
 <br>
@@ -58,5 +61,4 @@
 </div>
     </div>
   </div>
-</div>
 </div>

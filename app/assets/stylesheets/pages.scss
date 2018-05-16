@@ -138,12 +138,29 @@
 
 
  // ***** BOOTSTRAP ACCORDION
-// 
+//
 // .productphotos{
 //   height: 300px;
 //   width: 300px
 //
 // }
+
+#collapse3{
+  padding-bottom: 30px;
+}
+
+.fa-minus{
+  padding-top: 2px;
+}
+
+.fa-plus{
+  padding-top:2px;
+}
+
+.productphotos{
+  padding: 20px;
+}
+
  .panel-collapse{
    margin:20px;
  }
@@ -160,9 +177,7 @@
 
  }
 
-.glyphicon{
-  padding-top: 5px;
-}
+
  .number-spinner{
    float: right;
  }
@@ -172,12 +187,7 @@
 
  }
 
- .input-group{
-   width:100px !important;
-   margin-bottom: 50px !important;
-   height: 20px !important;
 
- }
  .counter{
 
    height:40px;
@@ -193,12 +203,7 @@
    height: 40px;
  }
 
- .form-control.text-center {
-   width: 200px !important;
-   height: 40px;
 
-
- }
 
  .control-label{
    font-size: 20px;
@@ -213,7 +218,7 @@
    // background-image: url('/Miami-beach.jpg');
  }
 
- .panel-group {
+ .card {
    width: 100%;
    position: relative;
    text-align: center;
