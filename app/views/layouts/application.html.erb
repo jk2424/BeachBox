@@ -61,7 +61,8 @@
             <%= content_tag(:span, "Hi, #{current_user.email}!", class: "nav-link") if current_user %>
           </li>
           <li>
-            <button type="button" class="btn btn-outline-warning">Shopping Cart</button>
+            <!-- button type="button" class="btn btn-outline-warning">Account</button> -->
+            <%= link_to "Account", account_path, :class => "btn btn-outline-warning" if current_user %>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
