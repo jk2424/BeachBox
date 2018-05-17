@@ -57,14 +57,13 @@
 
 
 
-    <%= link_to '<button type="button" class="btn btn-primary"">Back</button>'.html_safe, '/delivery' %>
+    <%= link_to '<button type="button" class="btn btn-warning">Back</button>'.html_safe, '/delivery' %>
 
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
               data-description="A month's subscription"
               data-amount="<%= @amount %>"
               data-locale="auto"></script>
-
 
 
 

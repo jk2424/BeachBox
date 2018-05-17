@@ -1,104 +1,33 @@
-<div class="container">
-    <h1>Edit Profile</h1>
-    <hr>
+<h1>USER PROFILE</h1>
 
-<% @user = current_user %>
-<%= form_for @user, url: user_path(:id => current_user.id), method: 'PATCH' do |f| %>
+
+<div class="container6">
+  <% @user = current_user %>
+  <%= form_for @user, url: user_path(:id => current_user.id), method: 'PATCH' do |f| %>
+
   <div>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name, autofocus: true %>
+    <%= f.label :first_name, "First Name:", class: "col-sm-4" %>
+    <%= f.text_field :first_name, class: "col-sm-4" %>
   </div>
   <div>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.label :email, "Email: ", class: "col-sm-4" %>
+    <%= f.text_field :email, class: "col-sm-4" %>
   </div>
   <div>
-    <%= f.label :phone_number %>
-    <%= f.text_field :phone_number %>    
+    <%= f.label :phone_number, "Phone Number: ", class: "col-sm-4" %>
+    <%= f.text_field :phone_number, class: "col-sm-4" %>    
   </div>
   <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.label :password, "Update Your Password: ", class: "col-sm-4" %>
+    <%= f.password_field :password, class: "col-sm-4" %>
   </div>
   <div>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, :class => "form-control" %>
+    <%= f.label :password_confirmation, "Confirm Password Update: ", class: "col-sm-4" %>
+    <%= f.password_field :password_confirmation, class: "col-sm-4" %>
   </div>
+  <p></p>
   <div>
-    <%= f.submit "Update!" %>
+    <%= f.submit "Update!", class: "btn btn-warning" %>
   </div>
 <% end %>
-        <!-- 
-        <form class="form-horizontal" role="form">
-          <div class="form-group">
-            <label class="col-lg-3 control-label">First name:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" value="Jane">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Last name:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" value="Bishop">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Company:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" value="">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Email:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" value="janesemail@gmail.com">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Time Zone:</label>
-            <div class="col-lg-8">
-              <div class="ui-select">
-                <select id="user_time_zone" class="form-control">
-                  <option value="Hawaii">(GMT-10:00) Hawaii</option>
-                  <option value="Alaska">(GMT-09:00) Alaska</option>
-                  <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
-                  <option value="Arizona">(GMT-07:00) Arizona</option>
-                  <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
-                  <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
-                  <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
-                  <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-md-3 control-label">Username:</label>
-            <div class="col-md-8">
-              <input class="form-control" type="text" value="janeuser">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-md-3 control-label">Password:</label>
-            <div class="col-md-8">
-              <input class="form-control" type="password" value="11111122333">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-md-3 control-label">Confirm password:</label>
-            <div class="col-md-8">
-              <input class="form-control" type="password" value="11111122333">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-md-3 control-label"></label>
-            <div class="col-md-8">
-              <input type="button" class="btn btn-primary" value="Save Changes">
-              <span></span>
-              <input type="reset" class="btn btn-default" value="Cancel">
-            </div>
-          </div>
-        </form>
-      </div>
-  </div>
 </div>
-<hr> -->

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 	root to: 'users#home'
 	get 'users/new' => 'users#new', as: :new_user
 	post 'users' => 'users#create'
-  get '/users/account_profile' => 'users#account_profile', as: :account 
+  get '/users/account_profile' => 'users#account_profile', as: :account
 
   patch '/users/update' => 'users#update', as: :user
 
