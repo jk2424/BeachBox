@@ -30,6 +30,8 @@ class PagesController < ApplicationController
   end
   private
 
+
+
   def order_item_params
     params.require(:order_item).permit(:orderitems_quantity, :product_id)
   end

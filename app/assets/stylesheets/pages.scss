@@ -24,7 +24,9 @@
      box-shadow: $shadow-z-1;
  }
 
-
+.form-control.number.qty{
+  max-width: 80px;
+}
 
 
  .stepper-steps {
