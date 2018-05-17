@@ -1,4 +1,4 @@
-
+<%= render 'deliveries/new' %>
 <%= form_tag charges_path do %>
   <article>
     <% if flash[:error].present? %>
@@ -7,10 +7,13 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Your Beach Box will cost you: $</span> <%= @amount/100.0 %>
+      <span>Your Beach Box will cost you: $</span> <%= @amount/100.00 %>
     </label>
 
-    <p>Your estimated delivery cost is $ <%= @quote.fee/100.0 %> </p>
+    <p>Your estimated delivery cost is $ <%= @delivery.fee/100.00 %> </p>
+            <p> <%= @delivery.dropoff_eta %> </p>
+
+
 
   </article>
 
@@ -20,3 +23,4 @@
           data-amount="<%= @amount %>"
           data-locale="auto"></script>
 <% end %>
+<%= console %>

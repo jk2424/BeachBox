@@ -1,12 +1,11 @@
 class ChargesController < ApplicationController
+  FROM  = "1 washington avenue, Miami Beach, FL"
+
   def new
-    @amount = 1000
+    @amount = current_order.subtotal * 100 #+ @quote.fee
 
 
-    from  = "1 washington avenue, Miami Beach, FL"
-    to  = "1 Ocean Drive, Miami Beach, FL"
-    @quote = $client.quote(pickup_address: from, dropoff_address: to)
-    pp @quote
+
     # from_lat = "37.778307"
     # from_lon = "-122.413524"
     # to_lat = "37.778307"
@@ -16,20 +15,20 @@ class ChargesController < ApplicationController
     package = {
                 :manifest => "a box of kittens",
                 :pickup_name => "The Warehouse",
-                :pickup_address => "20 McAllister St, San Francisco, CA",
+                :pickup_address => "1 Ocean Drive, Miami Beach, FL",
                 :pickup_phone_number => "415-555-1234",
                 # :pickup_business_name => "Optional Pickup Business Name, Inc.",
                 :pickup_notes => "Optional note that this is Invoice #123",
                 :dropoff_name => "Alice",
-                :dropoff_address => "101 Market St, San Francisco, CA",
-                :dropoff_phone_number => "415-555-1234",
+                :dropoff_address => "1 washington avenue, Miami Beach, FL, FL",
+                :dropoff_phone_number => "415-555-1234", # params[:drop_phone]
                 # :dropoff_business_name => "Optional Dropoff Business Name, Inc.",
                 :dropoff_notes => "Optional note to ring the bell",
                 # :quote_id => @quote.id #"dqt_K9LFfpSZCdAJsk"
               }
 
       @delivery = $client.create(package)
-      pp @delivery
+
   end
 
   def create
@@ -50,5 +49,10 @@ class ChargesController < ApplicationController
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
+  end
+  private
+  def get_quote
+    to  = "1 Ocean Drive, Miami Beach, FL" #params[:delivery_address]
+    @quote = $client.quote(pickup_address: FROM, dropoff_address: to)
   end
 end
