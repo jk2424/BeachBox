@@ -12,15 +12,14 @@
 <body>
 
 
-  <div class="container">
-    <div class="stepper">
+  <div class="stepper">
 
       <div class="stepper-step stepper-step-isValid">
         <div class="stepper-stepContent">
           <span class="stepper-stepMarker">1</span>Build Your Box
         </div>
       </div>
-      <div class="stepper-step stepper-step-isValid">
+      <div class="stepper-step stepper-step-isActive">
         <div class="stepper-stepContent">
           <span class="stepper-stepMarker">2</span>Delivery
         </div>
@@ -31,18 +30,29 @@
         </div>
       </div>
     </div>
-    <div class="stepper-content">
+
 
       <div>
+
         <%= form_for :order do |f| %>
         Enter Address: <%= f.text_field :street_address %><br />
         <%= f.submit %>
         <% end %>
       </div>
 
-      <p><button onclick="geoFindMe()">Show my location</button></p>
+      <p><button onclick="geoFindMe()">Use my current location</button></p>
       <div id="out">
 
+
+
+        <form action = "charges/new" >
+              Please enter your address
+              <br>
+              <input type="text" name="text1">
+              <br>
+              <br>
+              <input type="submit"/>
+            </form>
 
 
       </div>
@@ -50,7 +60,7 @@
     <%= link_to '<button type="button" class="btn btn-primary"">Back</button>'.html_safe, '/buildbox' %>
     <%= link_to '<button type="button" class="btn btn-primary"">Next</button>'.html_safe, '/cart' %>
 
-
+</div>
 
 
 
