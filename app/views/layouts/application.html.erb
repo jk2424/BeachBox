@@ -26,7 +26,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-light bg-white; ">
   <a class="navbar-brand" href="#">
-    <img src="assets/logosmall.png" width="200" height="auto" alt="logo">
+    <%= image_tag "logosmall.png", width: "200", height: "auto", alt: "logo" %>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -57,11 +57,11 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Something else here</a> -->
           <li class="nav-item">
-            <%= content_tag(:span, "Hi, #{current_user.email}!", class: "nav-link") if current_user %>
+            <%= content_tag(:span, "Hi, #{current_user.first_name}!", class: "nav-link") if current_user %>
           </li>
           <li>
             <!-- button type="button" class="btn btn-outline-warning">Account</button> -->
-            <%= link_to "Account", account_path, :class => "btn btn-outline-warning" if current_user %>
+            <%= link_to "Account", account_path, :class => "btn btn-outline-warning" %>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">

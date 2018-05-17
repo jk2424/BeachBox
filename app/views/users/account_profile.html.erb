@@ -1,34 +1,33 @@
-<!-- <div class="container">
-    <h1>Edit Profile</h1>
-    <hr>
-    <div class="row">
-      
+<h1>USER PROFILE</h1>
 
-    </div>
 
-<% @user = current_user %>
-<%= form_for @user, url: user_path(:id => current_user.id), method: 'PATCH' do |f| %>
+<div class="container6">
+  <% @user = current_user %>
+  <%= form_for @user, url: user_path(:id => current_user.id), method: 'PATCH' do |f| %>
+
   <div>
-    <%= f.label :first_name, "First Name:", class: "col-form-label" %>
-    <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
+    <%= f.label :first_name, "First Name:", class: "col-sm-4" %>
+    <%= f.text_field :first_name, class: "col-sm-4" %>
   </div>
   <div>
-    <%= f.label :email, "Email: " %>
-    <%= f.text_field :email %>
+    <%= f.label :email, "Email: ", class: "col-sm-4" %>
+    <%= f.text_field :email, class: "col-sm-4" %>
   </div>
   <div>
-    <%= f.label :phone_number, "Email: " %>
-    <%= f.text_field :phone_number %>    
+    <%= f.label :phone_number, "Phone Number: ", class: "col-sm-4" %>
+    <%= f.text_field :phone_number, class: "col-sm-4" %>    
   </div>
   <div>
-    <%= f.label :password, "Password:"  %>
-    <%= f.password_field :password %>
+    <%= f.label :password, "Password: ", class: "col-sm-4" %>
+    <%= f.password_field :password, class: "col-sm-4" %>
   </div>
   <div>
-    <%= f.label :password_confirmation, "Confirm Password: " %>
-    <%= f.password_field :password_confirmation, class: "form-control" %>
+    <%= f.label :password_confirmation, "Confirm Password: ", class: "col-sm-4" %>
+    <%= f.password_field :password_confirmation, class: "col-sm-4" %>
   </div>
+  <p></p>
   <div>
-    <%= f.submit "Update!" %>
+    <%= f.submit "Update!", class: "btn btn-warning" %>
   </div>
-<% end %> -->
+<% end %>
+</div>
