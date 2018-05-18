@@ -16,6 +16,8 @@
  */
  // @import "bootstrap-sprockets";
 
+/* HEADER & JUMBOTRON & FOOTER */
+
  h1 {
   text-align: center;
   color: #ffc107;
@@ -27,10 +29,80 @@
  	padding-bottom: 28%;
  }
 
- .modal-dialog {
-     max-width: 400px !important;
-     margin: 1.75rem auto;
+
+ .jumbotron img{
+  display: block;
+  margin: 0 auto;
+  width: 100%;
  }
+
+ .jumbotron h2{
+  text-align: center;
+  color: white;
+ }
+ .section-cover{
+  position: absolute;
+  top: 0;
+  left:0;
+  height: 100%;
+  background-color: #6c757d;
+  opacity: 0.4;
+  width: 100%;
+ }
+
+ .section {
+  color: white;
+  background-image: image-url("ocean.jpg");
+  background-size: cover;
+  padding-bottom: 50px;
+  display: block;
+  position: relative;
+ }
+
+ .container1 {
+  text-align: center;
+  background-color: #ffc107;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+ }
+
+ .container3 {
+  text-align: center;
+  position: relative;
+
+ }
+
+ .col-md-8.col-xl-9 {
+  margin: 0 auto;
+ }
+
+ .container6 {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 120px;
+  padding-bottom: 150px;
+ }
+
+ .footer {
+  background-image: image-url("footer.jpg");
+  background-size: cover;
+  padding-top: 150px;
+  padding-bottom: 25px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+ }
+
+.footer-logo img{
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+ }
+
+/* MODALS */
 
  .modal-dialog-centered {
     display: -ms-flexbox;
@@ -39,71 +111,17 @@
     align-items: center;
     padding-bottom: 300px;
     min-height: calc(100% - (.5rem * 2));
+     max-width: 400px !important;
+     margin: 1.75rem auto;
 }
 
- .jumbotron img{
- 	display: block;
- 	margin: 0 auto;
- 	width: 100%;
- }
 
- .jumbotron h2{
- 	text-align: center;
- 	color: white;
- }
- .section-cover{
- 	position: absolute;
- 	top: 0;
- 	left:0;
- 	height: 100%;
- 	background-color: #6c757d;
- 	opacity: 0.4;
- 	width: 100%;
- }
 
- .section {
- 	color: white;
- 	background-image: image-url("ocean.jpg");
- 	background-size: cover;
- 	padding-bottom: 50px;
- 	display: block;
- 	position: relative;
- }
-
- .container1 {
- 	text-align: center;
- 	background-color: #ffc107;
- 	padding-top: 50px;
- 	padding-bottom: 50px;
- 	position: relative;
- }
-
- .container3 {
- 	text-align: center;
- 	position: relative;
-
- }
-
- .col-md-8.col-xl-9 {
- 	margin: 0 auto;
- }
-
- .container4 {
- 	background-image: image-url("footer.jpg");
- 	background-size: cover;
-  padding-top: 150px;
- 	padding-bottom: 25px;
- 	margin: 0 auto;
- 	text-align: center;
- }
-
- .container6 {
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 150px;
-  padding-bottom: 150px;
- }
-
+/* NAV & BUTTONS */
 .dropdown-menu { 
   right: 0; left: auto;
+}
+
+.btn-warning {
+  font-color: white;
 }

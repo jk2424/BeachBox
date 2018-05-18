@@ -36,11 +36,11 @@
 
         <%= form_for :order do |f| %>
         Enter Address: <%= f.text_field :street_address %><br />
-        <%= f.submit %>
+        <%= f.submit "Save Order!", class: "btn btn-secondary btn-sm" %>
         <% end %>
       </div>
 
-      <p><button onclick="geoFindMe()">Use my current location</button></p>
+      <p><button onclick="geoFindMe()" class="btn btn-secondary btn-sm">Use my current location</button></p>
       <div id="out">
 
 
@@ -51,14 +51,16 @@
               <input type="text" name="text1">
               <br>
               <br>
-              <input type="submit"/>
+              <input type="submit" class="btn btn-info"/>
             </form>
 
 
       </div>
     </div>
+    <div class="delivery-buttons">
     <%= link_to '<button type="button" class="btn btn-warning"">Back</button>'.html_safe, '/buildbox' %>
     <%= link_to '<button type="button" class="btn btn-outline-warning"">Next</button>'.html_safe, '/cart' %>
+    </div>
 
 </div>
 

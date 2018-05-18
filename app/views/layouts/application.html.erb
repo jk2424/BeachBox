@@ -42,11 +42,11 @@
               <%= link_to 'Register', new_user_path, class: "nav-link", data: {target: "#RegisterModal", toggle: 'modal'} %>
             </li>
           <% end %>
-          <% if current_user %>
+<!--           <% if current_user %>
             <li class="nav-item">
               <%= link_to 'Log Out', logout_path, method: :delete, class: "nav-link" %>
             </li>
-          <% end %>
+          <% end %> -->
           <li class="nav-item">
             <%= content_tag(:span, "Hi, #{current_user.first_name}!", class: "nav-link") if current_user %>
           </li>
@@ -58,7 +58,8 @@
               <a class="dropdown-item" href="/users/account_profile">Account Profile</a>
               <a class="dropdown-item" href="/buildbox">Build-A-BeachBox</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/">Log Out</a>
+              <a class="dropdown-item" href=""><%= link_to 'Log Out', logout_path, method: :delete, class: "nav-link"%></a>
+            </div>
         </ul>
         <form class="form-inline my-2 my-lg-0">
         </form>
