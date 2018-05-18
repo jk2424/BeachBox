@@ -6,13 +6,13 @@
     <%= csp_meta_tag %>
 
    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-
    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%=Rails.application.credentials.dig(:google_map, :api_key)%>&callback=initMap"></script>
 
     <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>
 
@@ -26,7 +26,9 @@
 
   <nav class="navbar navbar-expand-lg navbar-light bg-white; ">
   <a class="navbar-brand" href="#">
-    <img src="assets/logosmall.png" width="200" height="auto" alt="logo">
+
+    <%= image_tag "logosmall.png", width:200, height:"auto", alt:"beach box logo"  %>
+
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -42,26 +44,23 @@
               <%= link_to 'Register', new_user_path, class: "nav-link", data: {target: "#RegisterModal", toggle: 'modal'} %>
             </li>
           <% end %>
-          <% if current_user %>
+<!--           <% if current_user %>
             <li class="nav-item">
               <%= link_to 'Log Out', logout_path, method: :delete, class: "nav-link" %>
             </li>
-          <% end %>
-<!--           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Account
+          <% end %> -->
+          <li class="nav-item">
+            <%= content_tag(:span, "Hi, #{current_user.first_name}!", class: "nav-link") if current_user %>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Where to?
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a> -->
-          <li class="nav-item">
-            <%= content_tag(:span, "Hi, #{current_user.email}!", class: "nav-link") if current_user %>
-          </li>
-          <li>
-            <button type="button" class="btn btn-outline-warning">Shopping Cart</button>
-          </li>
+              <a class="dropdown-item" href="/users/account_profile">Account Profile</a>
+              <a class="dropdown-item" href="/buildbox">Build-A-BeachBox</a>
+              <a class="dropdown-item" href=""><%= link_to 'Log Out', logout_path, method: :delete, class: "nav-link"%></a>
+            </div>
         </ul>
         <form class="form-inline my-2 my-lg-0">
         </form>

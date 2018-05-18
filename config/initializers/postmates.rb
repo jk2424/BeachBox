@@ -6,7 +6,8 @@
 $client = Postmates.new
 
 # Set basic config variables
+
 $client.configure do |config|
-  config.api_key = '2b203200-f6e2-4dc2-b921-ea4f789dfc27'
-  config.customer_id = 'cus_Lj6510Jd-FyIok'
+  config.api_key = Rails.application.credentials.dig(:postmates, :api_key),
+  config.customer_id = Rails.application.credentials.dig(:postmates, :customer_id)
 end

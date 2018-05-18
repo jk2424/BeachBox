@@ -1,61 +1,37 @@
 class DeliveriesController < ApplicationController
 
 
-  FROM  = "1 washington avenue, Miami Beach, FL"
-  def show
+  def new
 
-
-
-
-    # from_lat = "37.778307"
-    # from_lon = "-122.413524"
-    # to_lat = "37.778307"
-    # to_lon = "-122.413524"
-    # @quote = $client.quote(pickup_latitude: from_lat, pickup_longitude: from_lon, dropoff_latitude: to_lat, dropoff_longitude: to_lon)
 
     package = {
                 :manifest => "a box of kittens",
                 :pickup_name => "The Warehouse",
-                :pickup_address => "1 Ocean Drive, Miami Beach, FL",
+                :pickup_address => "1 washington avenue, Miami Beach, FL",
                 :pickup_phone_number => "415-555-1234",
                 # :pickup_business_name => "Optional Pickup Business Name, Inc.",
                 :pickup_notes => "Optional note that this is Invoice #123",
                 :dropoff_name => "Alice",
-                :dropoff_address => "1 washington avenue, Miami Beach, FL, FL",
-                :dropoff_phone_number => "415-555-1234", # params[:drop_phone]
+                :dropoff_address => params[:street_address],
+                :dropoff_phone_number => "415-555-1234",
                 # :dropoff_business_name => "Optional Dropoff Business Name, Inc.",
                 :dropoff_notes => "Optional note to ring the bell",
                 # :quote_id => @quote.id #"dqt_K9LFfpSZCdAJsk"
               }
 
-      @delivery = $client.create(package)
-
-
-
-  end
-
-
-def new
-
-  package = {
-              :manifest => "a box of kittens",
-              :pickup_name => "The Warehouse",
-              :pickup_address => "1 Ocean Drive, Miami Beach, FL",
-              :pickup_phone_number => "415-555-1234",
-              # :pickup_business_name => "Optional Pickup Business Name, Inc.",
-              :pickup_notes => "Optional note that this is Invoice #123",
-              :dropoff_name => "Alice",
-              :dropoff_address => "1 washington avenue, Miami Beach, FL, FL",
-              :dropoff_phone_number => "415-555-1234", # params[:drop_phone]
-              # :dropoff_business_name => "Optional Dropoff Business Name, Inc.",
-              :dropoff_notes => "Optional note to ring the bell",
-              # :quote_id => @quote.id #"dqt_K9LFfpSZCdAJsk"
-            }
-
     @delivery = $client.create(package)
-    @amount= @sub/100.00 + @delivery.fee/100.00
-
+    redirect_to mycart_path(fee: @delivery.fee)
+  end
+def create(params)
+  #
+  #
+  #
+  # @pin = delivery_params.street_address
 
 end
-
 end
+# private
+#
+# def deliver_params
+#   p params
+#   params.permit(:street_address)

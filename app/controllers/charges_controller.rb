@@ -3,6 +3,7 @@ class ChargesController < ApplicationController
 
   def new
     @amount = current_order.subtotal * 100 #+ @quote.fee
+
     package = {
                 :manifest => "a box of kittens",
                 :pickup_name => "The Warehouse",
