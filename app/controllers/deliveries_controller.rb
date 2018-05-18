@@ -1,15 +1,6 @@
 class DeliveriesController < ApplicationController
 
   def new
-    # from  = "1 washington avenue, Miami Beach, FL"
-    # to  = @pin
-    # # @quote = $client.quote(pickup_address: from, dropoff_address: to)
-
-    # from_lat = "37.778307"
-    # from_lon = "-122.413524"
-    # to_lat = "37.778307"
-    # # to_lon = "-122.413524"
-    # @quote = $client.quote(pickup_latitude: from_lat, pickup_longitude: from_lon, dropoff_latitude: to_lat, dropoff_longitude: to_lon)
 
     package = {
                 :manifest => "a box of kittens",
