@@ -21,6 +21,7 @@
 
 
 
+
 <%= render "shopping_cart" %>
 
 
@@ -36,7 +37,34 @@
 <% end %>
 <p>Subtotal: $<%= @sub/100.00  %>
   <p>Your estimated delivery cost is $<%=@fee/100.00 %> </p>
+<!--
 
+        <% if flash[:error].present? %>
+          <div id="error_explanation">
+            <p><%= flash[:error] %></p>
+          </div>
+        <% end %>
+        <% end %>
+
+    <div class="container8">
+        <p>Subtotal: $<%= @sub/100.00  %>
+        <p>Your estimated delivery cost is: <strong>$<%=@delivery.fee/100.00 %></strong></p>
+                      <p> <%= @delivery.dropoff_eta %> </p>
+
+        <div class="amount">
+          <span>Your Beach Box will cost you: <strong>$</span><%=@amount%></strong>
+        </div>
+
+
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="A month's subscription"
+              data-amount="<%= @amount %>"
+              data-locale="auto"></script>
+    <p></p>
+    <%= link_to '<button type="button" class="btn btn-warning">Back</button>'.html_safe, '/delivery' %>
+    </div>
 
   <div class="amount">
     <span>Your Beach Box will cost you: $</span><%=@amount%>

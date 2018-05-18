@@ -26,7 +26,9 @@
 
   <nav class="navbar navbar-expand-lg navbar-light bg-white; ">
   <a class="navbar-brand" href="#">
+
     <%= image_tag "logosmall.png", width:200, height:"auto", alt:"beach box logo"  %>
+
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -42,26 +44,23 @@
               <%= link_to 'Register', new_user_path, class: "nav-link", data: {target: "#RegisterModal", toggle: 'modal'} %>
             </li>
           <% end %>
-          <% if current_user %>
+<!--           <% if current_user %>
             <li class="nav-item">
               <%= link_to 'Log Out', logout_path, method: :delete, class: "nav-link" %>
             </li>
-          <% end %>
-<!--           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Account
+          <% end %> -->
+          <li class="nav-item">
+            <%= content_tag(:span, "Hi, #{current_user.first_name}!", class: "nav-link") if current_user %>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Where to?
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a> -->
-          <li class="nav-item">
-            <%= content_tag(:span, "Hi, #{current_user.email}!", class: "nav-link") if current_user %>
-          </li>
-          <li>
-            <button type="button" class="btn btn-outline-warning">Shopping Cart</button>
-          </li>
+              <a class="dropdown-item" href="/users/account_profile">Account Profile</a>
+              <a class="dropdown-item" href="/buildbox">Build-A-BeachBox</a>
+              <a class="dropdown-item" href=""><%= link_to 'Log Out', logout_path, method: :delete, class: "nav-link"%></a>
+            </div>
         </ul>
         <form class="form-inline my-2 my-lg-0">
         </form>
