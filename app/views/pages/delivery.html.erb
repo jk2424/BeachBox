@@ -34,17 +34,6 @@
 
       <div>
 
-        <%= form_for :cart do |f| %>
-          Enter Address: <%= f.text_field :street_address %><br />
-        <%= f.submit %>
-        <% end %>
-      </div>
-
-      <p><button onclick="geoFindMe()">Use my current location</button></p>
-      <div id="out">
-
-
-
         <form action = "cart/update" method="post" >
               Please enter your address
               <br>
@@ -54,11 +43,18 @@
               <input type="submit"/>
             </form>
 
+      <p><button onclick="geoFindMe()">Use my current location</button></p>
+      <div id="out">
+
+
+
+
+
 
       </div>
     </div>
     <%= link_to '<button type="button" class="btn btn-primary"">Back</button>'.html_safe, '/buildbox' %>
-    <%= link_to '<button type="button" class="btn btn-primary"">Next</button>'.html_safe, '/carts' %>
+
 
 </div>
 
