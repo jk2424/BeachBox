@@ -54,6 +54,23 @@ ActiveRecord::Schema.define(version: 2018_05_17_211540) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string "street_address"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "status"
+    t.string "shipment_method"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal "subtotal"
+    t.decimal "tax"
+    t.decimal "shipping"
+    t.decimal "total"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "product_name"
     t.integer "product_quantity"
