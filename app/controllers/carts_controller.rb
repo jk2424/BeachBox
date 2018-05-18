@@ -9,7 +9,6 @@ class CartsController < ApplicationController
   end
 
   def new(delivery_params)
-
     @pin = delivery_params.street_address
 
   end

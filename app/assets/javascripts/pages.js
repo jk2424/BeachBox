@@ -79,7 +79,7 @@ $(document).ready(function(){
   $("#entered-quantity").click(function(){
     var numChild = $("#child").val();
     if (numChild==0) {
-      $( ".suncreenchild" ).empty( function() {
+      $( ".children_sunscreen" ).empty( function() {
       });
         }
     pushAdultBase(),
@@ -131,16 +131,22 @@ function getNumFam(){
 };
 
 function pushAdultBase(){
-  var numAdult = Math.ceil($("#adult").val()/4)
+  var numAdult = Math.ceil($("#adult").val()/8)
   console.log(numAdult)
-  $( "#adult_suncreen_qty" ).val(numAdult)
+  $( "#adult_suncreen_qty" ).val(numAdult);
+  var numAdult = Math.ceil($("#adult").val()/2)
+  console.log(numAdult)
+  $( "#umbrella_qty" ).val(numAdult);
 
 };
 
 function pushChildBase(){
-  var numChild = Math.ceil($("#child").val()/4)
+  var numChild = Math.ceil($("#child").val()/8)
   console.log(numChild)
-  $( "#children_sunscreen_qty" ).val(numChild)
+  $( "#children_sunscreen_qty" ).val(numChild);
+  var numChild = Math.ceil($("#child").val()/2)
+  console.log(numChild)
+  $( "#umbrella_qty" ).val(numChild);
 
 };
 

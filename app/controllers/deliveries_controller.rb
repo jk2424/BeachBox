@@ -1,5 +1,6 @@
 class DeliveriesController < ApplicationController
 
+
   def new
 
     package = {
@@ -17,7 +18,7 @@ class DeliveriesController < ApplicationController
                 # :quote_id => @quote.id #"dqt_K9LFfpSZCdAJsk"
               }
 
-      @delivery = $client.create(package)
+    @delivery = $client.create(package)
     redirect_to mycart_path(fee: @delivery.fee)
   end
 def create(params)

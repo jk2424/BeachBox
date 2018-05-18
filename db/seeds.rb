@@ -8,10 +8,11 @@
 
 
 Product.destroy_all
-Product.create! product_name: "Chair", product_price: 5, active: true, product_quantity: 50, product_image_url: 'beachchairTEST.jpg'
-Product.create! product_name: "Children Sunscreen", product_price: 10, active: true, product_quantity: 50, product_image_url: 'sunscreenTEST.jpg'
-Product.create! product_name: "Adult Sunscreen", product_price: 10, active: true, product_quantity: 50, product_image_url: 'sunscreenadultTEST.jpg'
-Product.create! product_name: "Towel", product_price: 15, active: true, product_quantity: 50, product_image_url: 'towelTEST.jpg'
+Product.create! product_name: "Chair", product_price: 10, active: true, product_quantity: 50, product_image_url: 'Chair_1.png'
+Product.create! product_name: "Towel", product_price: 10, active: true, product_quantity: 50, product_image_url: 'towel-01.png'
+Product.create! product_name: "Umbrella", product_price: 25, active: true, product_quantity: 50, product_image_url: 'umbrella.png'
+Product.create! product_name: "Children Sunscreen", product_price: 5, active: true, product_quantity: 50, product_image_url: 'sunscreen_children-01.png'
+Product.create! product_name: "Adult Sunscreen", product_price: 6, active: true, product_quantity: 50, product_image_url: 'sunscreen_adult-01.png'
 
 OrderStatus.destroy_all
 OrderStatus.create! id: 1, name: "In Progress"
