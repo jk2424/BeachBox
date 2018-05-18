@@ -58,6 +58,7 @@ class CartsController < ApplicationController
 
       @delivery = $client.create(package)
       @amount= @sub/100.00 + @delivery.fee/100.00
+      redirect_to new_delivery_path
 
   end
 

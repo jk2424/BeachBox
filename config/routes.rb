@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  resources :attributes
   resources :products, only: [:index]
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
   resources :pages
+  resource :delivery
   get '/carts/show' => 'carts#show', as: :mycart
   get '/buildbox' => 'pages#index'
   get '/delivery' => 'pages#delivery'

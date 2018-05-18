@@ -45,7 +45,7 @@
 
 
 
-        <form action = "charges/new" >
+        <form action = "cart#new" >
               Please enter your address
               <br>
               <input type="text" name="text1">
@@ -56,6 +56,9 @@
 
 
       </div>
+
+      <p>Your estimated delivery cost is $<%=@delivery.fee/100.00 %> </p>
+                    <p> <%= @delivery.dropoff_eta %> </p>
     </div>
     <%= link_to '<button type="button" class="btn btn-primary"">Back</button>'.html_safe, '/buildbox' %>
     <%= link_to '<button type="button" class="btn btn-primary"">Next</button>'.html_safe, '/cart' %>
