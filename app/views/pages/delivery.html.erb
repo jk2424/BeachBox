@@ -32,38 +32,33 @@
     </div>
 
 
-      <div>
 
-        <%= form_for :order do |f| %>
-        Enter Address: <%= f.text_field :street_address %><br />
-        <%= f.submit "Save Order!", class: "btn btn-secondary btn-sm" %>
-        <% end %>
-      </div>
-
-      <p><button onclick="geoFindMe()" class="btn btn-secondary btn-sm">Use my current location</button></p>
+      <p><button onclick="geoFindMe()">Use my current location</button></p>
       <div id="out">
 
 
 
-        <form action = "charges/new" >
+
+        <form action = "cart/update" method="post" >
+
               Please enter your address
               <br>
-              <input type="text" name="text1">
+              <input type="text" name="street_address" required>
               <br>
               <br>
-              <input type="submit" class="btn btn-info"/>
+              <input type="submit"/>
             </form>
 
 
       </div>
     </div>
-    <div class="delivery-buttons">
-    <%= link_to '<button type="button" class="btn btn-warning"">Back</button>'.html_safe, '/buildbox' %>
-    <%= link_to '<button type="button" class="btn btn-outline-warning"">Next</button>'.html_safe, '/cart' %>
-    </div>
+    <%= link_to '<button type="button" class="btn btn-primary"">Back</button>'.html_safe, '/buildbox' %>
 
 </div>
 
+<div class="google_map">
+   <div id="map"></div>
+ </div>
 
 
   </body>

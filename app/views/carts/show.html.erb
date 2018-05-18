@@ -1,78 +1,53 @@
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<div class="stepper">
 
-
-    <meta charset="utf-8">
-    <title>Cart</title>
-
-  </head>
-  <body>
-
-    <div class="stepper">
-
-        <div class="stepper-step stepper-step-isValid">
-          <div class="stepper-stepContent">
-            <span class="stepper-stepMarker">1</span>Build Your Box
-          </div>
-        </div>
-        <div class="stepper-step stepper-step-isActive">
-          <div class="stepper-stepContent">
-            <span class="stepper-stepMarker">2</span>Delivery
-          </div>
-        </div>
-        <div class="stepper-step stepper-step-isActive">
-          <div class="stepper-stepContent">
-            <span class="stepper-stepMarker">3</span>Checkout
-          </div>
-        </div>
-      </div>
-
-
-
-
-            <%= render "shopping_cart" %>
-
-
-
-
-    <%= form_tag cart_path do %>
-
-        <% if flash[:error].present? %>
-          <div id="error_explanation">
-            <p><%= flash[:error] %></p>
-          </div>
-        <% end %>
-        <% end %>
-        
-    <div class="container8">
-        <p>Subtotal: $<%= @sub/100.00  %>
-        <p>Your estimated delivery cost is: <strong>$<%=@delivery.fee/100.00 %></strong></p>
-                      <p> <%= @delivery.dropoff_eta %> </p>
-
-        <div class="amount">
-          <span>Your Beach Box will cost you: <strong>$</span><%=@amount%></strong>
-        </div>
-
-
-
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-description="A month's subscription"
-              data-amount="<%= @amount %>"
-              data-locale="auto"></script>  
-    <p></p>
-    <%= link_to '<button type="button" class="btn btn-warning">Back</button>'.html_safe, '/delivery' %>
+  <div class="stepper-step stepper-step-isValid">
+    <div class="stepper-stepContent">
+      <span class="stepper-stepMarker">1</span>Build Your Box
     </div>
+  </div>
+  <div class="stepper-step stepper-step-isActive">
+    <div class="stepper-stepContent">
+      <span class="stepper-stepMarker">2</span>Delivery
+    </div>
+  </div>
+  <div class="stepper-step stepper-step-isActive">
+    <div class="stepper-stepContent">
+      <span class="stepper-stepMarker">3</span>Checkout
+    </div>
+  </div>
+</div>
 
 
 
 
-      </div>
+
+<%= render "shopping_cart" %>
+
+
+
+
+<%= form_tag cart_path do %>
+
+<% if flash[:error].present? %>
+<div id="error_explanation">
+  <p><%= flash[:error] %></p>
+</div>
+<% end %>
+<% end %>
+<p>Subtotal: $<%= @sub/100.00  %></p>
+  <p>Your estimated delivery cost is $<%=@fee/100.00 %> </p>
+
+  <div class="amount">
+    <span>Your Beach Box will cost you: $</span><%=@amount%>
   </div>
 
-  </body>
-</html>
+
+
+  <%= link_to '<button type="button" class="btn btn-primary"">Back</button>'.html_safe, '/delivery' %>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+  data-description="A month's subscription"
+  data-amount="<%= @amount*100 %>"
+  data-locale="auto"></script>

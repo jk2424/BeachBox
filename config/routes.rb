@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
+
+
   resources :products, only: [:index]
-  resource :cart, only: [:show]
+  resource :cart, only: [:show, :new, :create]
   resources :order_items, only: [:create, :update, :destroy]
   resources :pages
-  get '/carts/show' => 'carts#show', as: :mycart
+  get '/cart/show' => 'carts#show', as: :mycart
+  post 'cart/update' => 'deliveries#new'
   get '/buildbox' => 'pages#index'
   get '/delivery' => 'pages#delivery'
   get '/confirmation' => 'pages#confirmation'
+  # post '/cart' => 'carts#show', as: :mycart
+
+
   get 'pages/secret'
 	root to: 'users#home'
 	get 'users/new' => 'users#new', as: :new_user
@@ -25,5 +31,6 @@ Rails.application.routes.draw do
 	delete '/logout' => 'sessions#destroy'
 
   resources :charges
+  get 'deliveries/new' => 'deliveries#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
