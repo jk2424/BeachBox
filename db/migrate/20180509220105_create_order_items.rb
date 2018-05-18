@@ -4,7 +4,6 @@ class CreateOrderItems < ActiveRecord::Migration[5.2]
       t.integer :orderitems_quantity
       t.belongs_to :order, foreign_key: true
       t.belongs_to :product, foreign_key: true
-
       t.timestamps
     end
   end

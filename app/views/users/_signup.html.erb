@@ -1,0 +1,26 @@
+<% @user = User.new %>
+<%= form_for @user, url: users_path, method: 'POST' do |f| %>
+  <div>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, autofocus: true %>
+  </div>
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div>
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number %>    
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div>
+    <%= f.submit "Sign up!" %>
+  </div>
+<% end %>

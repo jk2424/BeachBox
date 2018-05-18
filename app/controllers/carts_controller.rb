@@ -1,20 +1,22 @@
 class CartsController < ApplicationController
 
-
-  def new
-    @amount = 1000 #current_order.subtotal * 100 #+ @quote.fee
+  def show
+    @sub = current_order.subtotal * 100
+    @order_items = current_order.order_items
+    @order = current_order
+    @amount = @sub/100.00 + params[:fee].to_i/100.00
+    @fee = params[:fee].to_i
   end
 
+  def new(delivery_params)
 
-    def show
-      @order_items = current_order.order_items
-      @order = current_order
+    @pin = delivery_params.street_address
 
   end
+
 
   def create
     # Amount in cents
-    # @amount =
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail]
@@ -31,4 +33,15 @@ class CartsController < ApplicationController
     flash[:error] = e.message
     redirect_to new_charge_path
   end
+
+
+  private
+
+  def deliver_params
+    p params
+    params.permit(:street_address)
+  end
+
+
+
 end

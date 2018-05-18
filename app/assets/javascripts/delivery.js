@@ -7,15 +7,22 @@ function geoFindMe() {
   }
 
   function success(position) {
+
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
+    console.log(latitude, longitude);
 
-    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+output.innerHTML = " ";
+    var latLng = new google.maps.LatLng(latitude, longitude);
+    var marker = new google.maps.Marker({
+            animation: google.maps.Animation.DROP,
+            icon: 'https://www.freeiconspng.com/minicovers/red-beach-umbrella-png-12.png',
+            map: window.map,
+            position: latLng
+          });
+    window.map.setCenter(latLng);
+    $('#map').fadeIn(1000);
 
-    var img = new Image();
-    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
-
-    output.appendChild(img);
   }
 
   function error() {

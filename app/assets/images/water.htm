@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://blog.alexellis.io/jenkins-splashes-with-blue-ocean/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Jenkins makes a UX splash with Blue Ocean</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="./water_files/css">
+    <link rel="stylesheet" type="text/css" href="./water_files/screen.css">
+
+
+    <meta name="description" content="Jenkins has made a splash with a huge UX overhaul and it&#39;s gorgeous. Docker Captain Alex Ellis talks to CloudBees UX manager James Dumay about Blue Ocean.">
+    <link rel="shortcut icon" href="https://blog.alexellis.io/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://blog.alexellis.io/jenkins-splashes-with-blue-ocean/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="https://blog.alexellis.io/jenkins-splashes-with-blue-ocean/amp/">
+    
+    <meta property="og:site_name" content="alex ellis&#39; blog">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Jenkins makes a UX splash with Blue Ocean">
+    <meta property="og:description" content="Jenkins has made a splash with a huge UX overhaul and it&#39;s gorgeous. Docker Captain Alex Ellis talks to CloudBees UX manager James Dumay about Blue Ocean. ">
+    <meta property="og:url" content="https://blog.alexellis.io/jenkins-splashes-with-blue-ocean/">
+    <meta property="og:image" content="https://blog.alexellis.io/content/images/2016/08/blue_ocean.jpg">
+    <meta property="article:published_time" content="2016-09-02T20:48:00.000Z">
+    <meta property="article:modified_time" content="2017-05-24T22:13:45.000Z">
+    <meta property="article:tag" content="jenkins">
+    <meta property="article:tag" content="docker">
+    <meta property="article:tag" content="Blue Ocean">
+    <meta property="article:tag" content="DevOps">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jenkins makes a UX splash with Blue Ocean">
+    <meta name="twitter:description" content="Jenkins has made a splash with a huge UX overhaul and it&#39;s gorgeous. Docker Captain Alex Ellis talks to CloudBees UX manager James Dumay about Blue Ocean. ">
+    <meta name="twitter:url" content="https://blog.alexellis.io/jenkins-splashes-with-blue-ocean/">
+    <meta name="twitter:image" content="https://blog.alexellis.io/content/images/2016/08/blue_ocean.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Alex Ellis">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="jenkins, docker, Blue Ocean, DevOps">
+    <meta name="twitter:site" content="@alexellisuk">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1200">
+    
+    <script async="" src="./water_files/analytics.js"></script><script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "alex ellis&#x27; blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://blog.alexellis.io/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Alex Ellis",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/666e00e7ae920ab0996688e91cd5a0c8?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://blog.alexellis.io/author/alex/",
+        "sameAs": [
+            "https://www.alexellis.io/"
+        ]
+    },
+    "headline": "Jenkins makes a UX splash with Blue Ocean",
+    "url": "https://blog.alexellis.io/jenkins-splashes-with-blue-ocean/",
+    "datePublished": "2016-09-02T20:48:00.000Z",
+    "dateModified": "2017-05-24T22:13:45.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://blog.alexellis.io/content/images/2016/08/blue_ocean.jpg",
+        "width": 1920,
+        "height": 1200
+    },
+    "keywords": "jenkins, docker, Blue Ocean, DevOps",
+    "description": "Jenkins has made a splash with a huge UX overhaul and it&#x27;s gorgeous. Docker Captain Alex Ellis talks to CloudBees UX manager James Dumay about Blue Ocean. ",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.alexellis.io/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="./water_files/ghost-sdk.min.js"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "82fbfa0d7e51"
+});
+</script>
+    <meta name="generator" content="Ghost 1.21">
+    <link rel="alternate" type="application/rss+xml" title="alex ellis&#39; blog" href="https://blog.alexellis.io/rss/">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60759269-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<script type="text/javascript" async="" src="./water_files/embed.js"></script><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.188f59a1df04c219bf32da7f76545092.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.037f55c32651d22255e90738c195e946.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.2fd6d206c06cd51584499fe8219aa635.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"></head>
+<body class="post-template tag-jenkins tag-docker tag-blue-ocean tag-devops nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="https://blog.alexellis.io/jenkins-splashes-with-blue-ocean/#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-home"><a href="https://blog.alexellis.io/">Home</a></li>
+            <li class="nav-docker"><a href="https://blog.alexellis.io/tag/docker/">Docker</a></li>
+            <li class="nav-raspberry-pi"><a href="https://blog.alexellis.io/tag/raspberry-pi/">Raspberry PI</a></li>
+            <li class="nav-github-repos"><a href="https://github.com/alexellis/">Github repos</a></li>
+            <li class="nav-serverless"><a href="https://blog.alexellis.io/tag/faas/">Serverless</a></li>
+    </ul>
+        <a class="subscribe-button" href="https://blog.alexellis.io/subscribe/">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head " style="background-image: url(/content/images/2016/08/blue_ocean.jpg)">
+    <nav class="main-nav overlay clearfix">
+        
+            <a class="menu-button icon-menu" href="https://blog.alexellis.io/jenkins-splashes-with-blue-ocean/#"><span class="word">Menu</span></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post tag-jenkins tag-docker tag-blue-ocean tag-devops">
+
+        <header class="post-header">
+            <h1 class="post-title">Jenkins makes a UX splash with Blue Ocean</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2016-09-02">02 September 2016</time>  on <a href="https://blog.alexellis.io/tag/jenkins/">jenkins</a>, <a href="https://blog.alexellis.io/tag/docker/">docker</a>, <a href="https://blog.alexellis.io/tag/blue-ocean/">Blue Ocean</a>, <a href="https://blog.alexellis.io/tag/devops/">DevOps</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div class="kg-card-markdown"><p>One of the teams at <strong>CloudBees (Jenkins' corporate sponsor)</strong> has been working on <strong>an overhaul of the Jenkins community user experience and design</strong>. It's in the alpha stage and they are aiming to build the best user experience around Jenkins Pipeline. I saw a screenshot on Twitter today and couldn't recognise the <em>functional business tool</em> I had been staring at for years.</p>
+<p>If you're into DevOps then you're probably already using Jenkins at work, in an Open Source project or at home - for me it's a house-hold name and a long-time favourite. Join me in this post for a introduction to the Blue Ocean project - who's behind it, how to use it and how to get involved.</p>
+<p>I'll be using Docker to evaluate the new design.</p>
+<h3 id="meetblueocean">Meet "Blue Ocean"</h3>
+<blockquote>
+<p>Here's a preview of the beautiful blue colour theme and responsive UI built on top of React offering a real-time experience - no more refreshes or asking yourself is my build done yet?</p>
+</blockquote>
+<p><img src="./water_files/Screen-Shot-2016-08-14-at-21-49-14.png" alt=""></p>
+<h4 id="interviewwithuxproductmanager">Interview with UX Product Manager</h4>
+<p>I had a chat over Twitter with James Dumay the UX Product Manager at CloudBees for the Blue Ocean team who are carrying out this overhaul. I wanted to write a quick guide to show off some of the work that has been achieved already. I asked James a few questions:</p>
+<ul>
+<li>Have there been any technology upgrades in the UI?</li>
+</ul>
+<blockquote>
+<p>James: Yes, we’ve rebuilt the UI using Facebook’s React and server side events (SSE) to update the UI in real time, eliminating any need to refresh. It’s an exciting time to build web applications. The browser in 2016 is an amazing platform to build apps and we’re absolutely spoilt rotten with tools like React.</p>
+</blockquote>
+<ul>
+<li>Are the name of the Team and the Project both Blue Ocean?</li>
+</ul>
+<blockquote>
+<p>James: Yes, the team and the project share the same name.</p>
+</blockquote>
+<ul>
+<li>OK, I'm sold.. how do I get it?</li>
+</ul>
+<blockquote>
+<p>James: All you need to do is to upgrade Jenkins to 2.2 or above, configure your server to use the experimental plugin update center, install the Blue Ocean plugin. We will make it available via the regular update center soon. Watch for news at Jenkins World this September!</p>
+</blockquote>
+<p>Check out the <a href="https://jenkins.io/blog/2016/07/19/blue-ocean-update/">Blue Ocean Team Update</a> or read on for my step by step guide.</p>
+<ul>
+<li>Wait.. it doesn't work with Jenkins 2.0?</li>
+</ul>
+<blockquote>
+<p>James: Surprisingly we didn’t have to change much to start developing Blue Ocean except for Stapler the extendable web framework that Jenkins uses exclusively to build REST APIs. By the time we had finished those modifications it landed in the Jenkins 2.2 release. Jenkins releases weekly so don’t let those minor release versions worry you too much.</p>
+</blockquote>
+<ul>
+<li>I noticed that there is limited support for Freestyle jobs, why is that?</li>
+</ul>
+<blockquote>
+<p>James: We believe that Jenkins Pipeline is going to be the best way to model all automation in Jenkins, that’s why we’re designing Blue Ocean to be a first class experience for Pipeline. We recognise that many users rely on other job types such as Freestyle which is why supporting those job types is also on our roadmap. Pipeline is where all the action is - everything from new visualizations, reporting and improved Github support really shines when we build it with Pipeline in mind.</p>
+</blockquote>
+<ul>
+<li>Are you open to feedback?</li>
+</ul>
+<blockquote>
+<p>James: Yes, absolutely! Please give it a try and let us know how it worked for you. The team is very engaged in making this the best user experience possible for Jenkins, so your feedback, both positive and negative, is very useful to us.</p>
+</blockquote>
+<h3 id="quickstart">Quickstart</h3>
+<p>Follow the next few steps to try it out for yourself.</p>
+<h4 id="10bootupjenkins22indocker">1.0 Boot up Jenkins 2.2 in Docker</h4>
+<p>You can either install Jenkins manually or boot up an instance in Docker that you can throw away afterwards without worrying about affecting your test or development instance. This code is still in the alpha phase.</p>
+<p>You can use my <code>docker-compose.yml</code> file to boot up a fully working Jenkins 2.2 instance. If you want an Agent/Slave combination then check out my <a href="http://blog.alexellis.io/jenkins-2-0-first-impressions/">First Impressions of Jenkins 2.0</a> guide.</p>
+<pre><code>version: '2'
+services:
+  ci:
+    image: jenkinsci/jenkins:2.2
+    ports:
+     - "8080:8080"
+     - "50000:50000"
+</code></pre>
+<p><em>docker-compose.yml</em></p>
+<h4 id="11optintoexperimentalupdates">1.1 Opt-in to experimental updates</h4>
+<p>Now this part feels quite permanent which is one of the reasons I'm suggesting Docker for evaluating it. We need to opt into using an experimental update centre for plugins then we can add in the Blue Ocean UX experience.</p>
+<ul>
+<li>Navigate to <em>Manage Jenkins -&gt; Manage Plugins -&gt; Advanced</em></li>
+<li>Enter the following into the the update centre at the bottom of the screen:</li>
+</ul>
+<pre><code>http://updates.jenkins-ci.org/experimental/update-center.json
+</code></pre>
+<ul>
+<li>Click <code>Submit</code> and then by the "Update information obtained" label click the <code>Check</code> button.</li>
+</ul>
+<h4 id="20selecttheblueoceanuxplugin">2.0 Select the Blue Ocean UX Plugin</h4>
+<ul>
+<li>
+<p>Navigate to <em>Manage Jenkins -&gt; Manage Plugins -&gt; Available PLugins</em></p>
+</li>
+<li>
+<p>Search for Blue Ocean and check it, then click update with restart.</p>
+</li>
+</ul>
+<blockquote>
+<p>Note: when I wrote this post the plugin was called <em>(Alpha) BlueOcean UX</em> and is now called <em>BlueOcean beta</em></p>
+</blockquote>
+<p>Jenkins will download the new code, restart and then ask you to log in again.</p>
+<h4 id="21optintothenewui">2.1 Opt into the new UI</h4>
+<p>If everything worked (and it did for me) you will see a blue icon at the top of the page, login and then click that button.</p>
+<p><img src="./water_files/Screen-Shot-2016-08-14-at-12-55-17.png" alt=""></p>
+<h4 id="30takeitforaspin">3.0 Take it for a spin</h4>
+<p>I already added a Freestyle project before opting in to the Blue Ocean experience. You will notice there are no buttons to create new Freestyle projects etc. As James said - the team is really looking to provide the best experience for <em>Pipeline</em> and I think it makes sense as it was such a big part of the 2.0 release.</p>
+<h5 id="joblist">Job list</h5>
+<p>This is where I spend most of my time in the classical Jenkins theme - the job list. From here I'm used to adding jobs, starting/stopping builds and eye-balling statuses.</p>
+<p>Guys.. where is the <em>Run this build</em> button?</p>
+<p><img src="./water_files/Screen-Shot-2016-08-14-at-13-12-33.png" alt=""></p>
+<h5 id="buildhistory">Build history</h5>
+<p>Here's the screen for build history. The team has finally done away with blue/green for red/green, but at what cost? James.. maybe you need an option for the colour blind amongst us?</p>
+<p><img src="./water_files/Screen-Shot-2016-08-14-at-21-13-20-1.png" alt=""></p>
+<p>Clicking onto the Freestyle project you will see a summary of the latest build information and console output is also available. This part looks to me very much like the UI for Travis-CI.</p>
+<p><img src="./water_files/nodejs_git_pull.png" alt=""></p>
+<p>I am a hardcore fan of dark themes for code editors and terminals so this looks perfect to my eyes.</p>
+<h4 id="changesview">Changes view</h4>
+<p>The changes view shows all the commits between this and the last build. You also get to see who pushed the changes i.e. <em>alexellis2</em> in this instance.</p>
+<p><img src="./water_files/Screen-Shot-2016-08-14-at-21-31-58.png" alt=""></p>
+<h4 id="quicklookatpipeline">Quick look at Pipeline</h4>
+<p>Pipeline is absolutely the use-case the team have catered for. If you want to get the best out of the new UI then it may be time to start moving jobs over to the new Pipeline format.</p>
+<p><img src="./water_files/Screen-Shot-2016-08-14-at-21-50-29.png" alt=""><br>
+There are features I haven't been able to reach here without moving to a Pipeline build. The Tests and Artifacts tabs look interesting and I wonder what the new graph looks like for unit tests?</p>
+<p><img src="./water_files/test_steps.png" alt=""></p>
+<h3 id="calltoaction">Call to action</h3>
+<p><img src="./water_files/docker-jenkins.png" alt=""></p>
+<p>I think Blue Ocean is going to make a huge splash and if you like what you are seeing and like to keep abreast of emerging tech then take a few minutes to run up a Docker container and give some feedback to <a href="https://twitter.com/i386">James</a> and his team.</p>
+<p>With new <a href="https://www.docker.com/products/docker">Docker for Windows or Mac</a> native experiences Docker has never been easier.</p>
+<p>See Also:</p>
+<ul>
+<li>
+<p><a href="http://blog.alexellis.io/jenkins-2-0-first-impressions/">Jenkins 2.0 First Impressions</a></p>
+</li>
+<li>
+<p><a href="http://blog.alexellis.io/jenkins-meets-the-proxy/">Jenkins meets the corporate proxy</a></p>
+</li>
+</ul>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="https://blog.alexellis.io/author/alex/" style="background-image: url(//www.gravatar.com/avatar/666e00e7ae920ab0996688e91cd5a0c8?s=250&amp;d=mm&amp;r=x)"><span class="hidden">Alex Ellis's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="https://blog.alexellis.io/author/alex/">Alex Ellis</a></h4>
+
+                    <p>Read <a href="https://blog.alexellis.io/author/alex/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    <span class="author-link icon-link"><a href="https://www.alexellis.io/">https://www.alexellis.io/</a></span>
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Jenkins%20makes%20a%20UX%20splash%20with%20Blue%20Ocean&amp;url=https://blog.alexellis.io/jenkins-splashes-with-blue-ocean/" onclick="window.open(this.href, &#39;twitter-share&#39;, &#39;width=550,height=235&#39;);return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.alexellis.io/jenkins-splashes-with-blue-ocean/" onclick="window.open(this.href, &#39;facebook-share&#39;,&#39;width=580,height=296&#39;);return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://blog.alexellis.io/jenkins-splashes-with-blue-ocean/" onclick="window.open(this.href, &#39;google-plus-share&#39;, &#39;width=490,height=530&#39;);return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+            <section class="gh-subscribe">
+                <h3 class="gh-subscribe-title">Subscribe to alex ellis' blog</h3>
+                <p>Get the latest posts delivered right to your inbox.</p>
+                <form method="post" action="https://blog.alexellis.io/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"><input class="location" type="hidden" name="location" value="https://blog.alexellis.io/jenkins-splashes-with-blue-ocean/"><input class="referrer" type="hidden" name="referrer" value="https://www.google.com/">
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email" placeholder="Your email address">
+    </div>
+    <button class="" type="submit"><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+
+                <span class="gh-subscribe-rss">or subscribe <a href="http://cloud.feedly.com/#subscription/feed/https://blog.alexellis.io/rss/">via RSS</a> with Feedly!</span>
+            </section>
+
+
+        <div id="disqus_thread"><iframe id="dsq-app3651" name="dsq-app3651" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./water_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 2308px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+	<script type="text/javascript">
+	    /* * * CONFIGURATION VARIABLES * * */
+	    var disqus_shortname = 'quad-alexellis';
+
+	    /* * * DON'T EDIT BELOW THIS LINE * * */
+	    (function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+        </footer>
+
+    </article>
+</main>
+
+<aside class="read-next">
+    <a class="read-next-story " style="background-image: url(/content/images/2016/09/OpportunityPeterboroughNEW-1024x667-1.jpg)" href="https://blog.alexellis.io/dpip-ftw/">
+        <section class="post">
+            <h2>Docker Comes to Peterborough</h2>
+            <p>Tonight I'll be speaking about Docker at Digital People in Peterborough Meetup.com group. As a Docker Captain it's…</p>
+        </section>
+    </a>
+    <a class="read-next-story prev " style="background-image: url(/content/images/2016/08/IMG_20160829_103245.jpg)" href="https://blog.alexellis.io/live-deep-dive-pi-swarm/">
+        <section class="post">
+            <h2>Live Deep Dive - Docker Swarm Mode on the Pi</h2>
+            <p>I've been putting Docker to work on the Raspberry Pi since I first heard about it in mid-2015. Two…</p>
+        </section>
+    </a>
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="https://blog.alexellis.io/">alex ellis' blog</a> © 2018</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org/">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="./water_files/jquery-1.12.0.min.js"></script>
+    <!-- You can safely delete this line if your theme does not require jQuery -->
+<script type="text/javascript" src="./water_files/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="./water_files/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="./water_files/index.js"></script>
+
+
+
+<iframe style="display: none;" src="./water_files/saved_resource(1).html"></iframe></body></html>

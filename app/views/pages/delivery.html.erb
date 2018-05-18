@@ -5,24 +5,21 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
 
-
-  <meta charset="utf-8">
+  <!-- <meta charset="utf-8"> -->
   <title>BuildBox</title>
 </head>
 <body>
 
 
-  <div class="container">
-    <div class="stepper">
+  <div class="stepper">
 
       <div class="stepper-step stepper-step-isValid">
         <div class="stepper-stepContent">
           <span class="stepper-stepMarker">1</span>Build Your Box
         </div>
       </div>
-      <div class="stepper-step stepper-step-isValid">
+      <div class="stepper-step stepper-step-isActive">
         <div class="stepper-stepContent">
           <span class="stepper-stepMarker">2</span>Delivery
         </div>
@@ -33,27 +30,41 @@
         </div>
       </div>
     </div>
-    <div class="stepper-content">
+
 
       <div>
-        <%= form_for :order do |f| %>
-        Enter Address: <%= f.text_field :street_address %><br />
+
+        <%= form_for :cart do |f| %>
+          Enter Address: <%= f.text_field :street_address %><br />
         <%= f.submit %>
         <% end %>
       </div>
 
-      <p><button onclick="geoFindMe()">Show my location</button></p>
+      <p><button onclick="geoFindMe()">Use my current location</button></p>
       <div id="out">
 
+
+
+        <form action = "cart/update" method="post" >
+              Please enter your address
+              <br>
+              <input type="text" name="street_address" required>
+              <br>
+              <br>
+              <input type="submit"/>
+            </form>
 
 
       </div>
     </div>
     <%= link_to '<button type="button" class="btn btn-primary"">Back</button>'.html_safe, '/buildbox' %>
-    <%= link_to '<button type="button" class="btn btn-primary"">Next</button>'.html_safe, '/cart' %>
+    <%= link_to '<button type="button" class="btn btn-primary"">Next</button>'.html_safe, '/carts' %>
 
+</div>
 
-
+<div class="google_map">
+   <div id="map"></div>
+ </div>
 
 
   </body>

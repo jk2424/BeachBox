@@ -1,16 +1,19 @@
 Rails.application.routes.draw do
 
   resources :products, only: [:index]
-  resource :cart, only: [:show]
+  resource :cart, only: [:show, :new, :create]
   resources :order_items, only: [:create, :update, :destroy]
-  get '/carts/show' => 'carts#show', as: :mycart
+  resources :pages
+  get '/cart/show' => 'carts#show', as: :mycart
+  post 'cart/update' => 'deliveries#new'
   get '/buildbox' => 'pages#index'
   get '/delivery' => 'pages#delivery'
   get '/confirmation' => 'pages#confirmation'
+  # post '/cart' => 'carts#show', as: :mycart
 
 
   get 'pages/secret'
-	root to: 'users#new'
+	root to: 'users#home'
 	get 'users/new' => 'users#new', as: :new_user
 	post 'users' => 'users#create'
 

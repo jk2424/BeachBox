@@ -1,0 +1,98 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ *= require_tree .
+ *= require_self
+ */
+ // @import "bootstrap-sprockets";
+
+ .jumbotron{
+ 	background-image: image-url("header1.jpg");
+ 	background-size: cover;
+ 	padding-bottom: 28%;
+ }
+
+ .modal-dialog {
+     max-width: 300px !important;
+     margin: 1.75rem auto;
+ }
+
+ .modal-dialog-centered {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-bottom: 300px;
+    min-height: calc(100% - (.5rem * 2));
+}
+
+ .jumbotron img{
+ 	display: block;
+ 	margin: 0 auto;
+ 	width: 100%;
+ }
+
+ .jumbotron h2{
+ 	text-align: center;
+ 	color: white;
+ }
+ .section-cover{
+ 	position: absolute;
+ 	top: 0;
+ 	left:0;
+ 	height: 100%;
+ 	background-color: #6c757d;
+ 	opacity: 0.4;
+ 	width: 100%;
+ }
+
+ .section {
+ 	color: white;
+ 	background-image: image-url("ocean.jpg");
+ 	background-size: cover;
+ 	padding-bottom: 50px;
+ 	display: block;
+ 	position: relative;
+ }
+
+ .container1 {
+ 	text-align: center;
+ 	background-color: #ffc107;
+ 	padding-top: 10px;
+ 	padding-bottom: 10px;
+ 	position: relative;
+ }
+
+ .container3 {
+ 	text-align: center;
+ 	position: relative;
+
+ }
+
+ .col-md-8.col-xl-9 {
+ 	margin: 0 auto;
+ }
+
+ .container4 {
+ 	background-image: image-url("footer.jpg");
+ 	background-size: cover;
+ 	padding-bottom: 50px;
+ 	margin: 0 auto;
+ 	text-align: center;
+ }
+
+#map {
+  height: 300px;
+  width: 300px;
+  display: none;
+}

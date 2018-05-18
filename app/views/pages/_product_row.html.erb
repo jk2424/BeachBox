@@ -1,14 +1,18 @@
 <% p_name = product.product_name.parameterize.underscore %>
-<div class="<%= p_name %>" data-target="<%= p_name %>"><%= image_tag(product.product_image_url) %>
+<div class="productphotos <%= p_name %>" data-target="<%= p_name %>"><%= image_tag(product.product_image_url) %>
+  <br>
   <div class="form-group">
-    <label class="control-label col-md-5"><%= product.product_name %></label>
-    <div class="input-group number-spinner col-md-7">
+    <div class="control-label"><%= product.product_name %></div>
+    <label class="control-label2">$<%= product.product_price %> (unit price)</label>
+    <br>
+    <p></p>
+    <div class="input-group number-spinner">
       <span class="input-group-btn">
-        <a class="btn btn-danger" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></a>
+              <a class="btn btn-danger spin" data-dir="dwn"><i class="fas fa-minus"></i></a>
       </span>
-      <input type="text" disabled data-id="<%= product.id %>" data-name="<%= product.product_name %>" name="<%= p_name %>_qty" id="<%= p_name %>_qty" class="form-control text-center item_qty" value="1" max=9 min=0>
+      <input type="text" disabled data-id="<%= product.id %>" data-name="<%= product.product_name %>" name="<%= p_name %>_qty" id="<%= p_name %>_qty" class="form-control text-center item_qty" value="1" max=9 min=1>
       <span class="input-group-btn">
-        <a class="btn btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></a>
+        <a class="btn btn-info" data-dir="up"><i class="fas fa-plus"></i></a>
       </span>
     </div>
   </div>
