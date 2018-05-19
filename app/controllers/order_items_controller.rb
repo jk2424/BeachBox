@@ -26,11 +26,10 @@ class OrderItemsController < ApplicationController
     @order = current_order
     @order_item = @order.order_items.find(params[:id])
     @order_item.update_attribute(:orderitems_quantity, order_item_params[:orderitems_quantity])
-
-
-
+    @fee = params[:fee]
+    @delivery = get_delivery(current_order.street_address)
     # @order_item.update_attribute(:orderitems_quantity, order_item_params[:orderitems_quantity])
-    redirect_to :mycart
+    redirect_to mycart_path(fee: @fee)
   end
 
   def destroy
