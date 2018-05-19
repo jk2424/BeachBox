@@ -33,32 +33,33 @@
 
 
 
-      <p><button onclick="geoFindMe()">Use my current location</button></p>
-      <div id="out">
+    <div id="out">
+    <p><button onclick="geoFindMe()">Use my current location</button></p>
+    </div>
+    <div class="google_map">
+    <div id="map"></div>
+    </div>
 
-
-
-
-        <form action = "cart/update" method="post" >
+        <form action = "cart/update" method="post">
 
               Please enter your address
               <br>
-              <input type="text" name="street_address" required>
+              <input type="text"  id="geoaddress" name="street_address" required />
               <br>
               <br>
               <input type="submit"/>
             </form>
 
 
-      </div>
-    </div>
+
+
+
+
     <%= link_to '<button type="button" class="btn btn-primary"">Back</button>'.html_safe, '/buildbox' %>
 
-</div>
 
-<div class="google_map">
-   <div id="map"></div>
- </div>
+
+
 
 
   </body>

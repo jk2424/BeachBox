@@ -29,9 +29,27 @@ def create(params)
   # @pin = delivery_params.street_address
 
 end
+
+# def form(delivery_params)
+#   p "I got called"
+#   latitude = delivery_params[:latitude]
+#   longitude = delivery_params[:longitude]
+#
+# hash = GET https://us1.locationiq.org/v1/reverse.php?key=979e5fe5b2c531&lat=[]&lon=${@longitude1}&format=json
+# @address = hash[:display_name]
+# p @address
+#
+# end
 end
+
+
+
+
 # private
 #
-# def deliver_params
+# def delivery_params
 #   p params
-#   params.permit(:street_address)
+#
+#   params.permit(:latitude, longitude)
+#
+# end
