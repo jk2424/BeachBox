@@ -1,13 +1,9 @@
 <%= form_tag '/login' do %>
-  <div>
-    <%= label_tag :email %>
-    <%= text_field_tag :email, nil, autofocus: true %>
-  </div>
-  <div>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
-  <div>
-    <%= submit_tag "Log In", class: "btn btn-outline-warning" %>
-  </div>
+  <div class="modal-login"><%= label_tag :email %></div>
+  <div class="col-sm-6 offset-sm-3"><%= text_field_tag :email, nil, autofocus: true %></div>
+
+  <div class="modal-login"><%= label_tag :password %></div>
+  <div class="col-sm-6 offset-sm-3"><%= password_field_tag :password%></div>
+
+  <div class="modal-login-btn"><%= submit_tag "Log In", class: "btn btn-outline-warning" %></div>
 <% end %>

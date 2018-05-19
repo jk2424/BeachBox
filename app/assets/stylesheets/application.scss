@@ -106,20 +106,6 @@
   max-width: 100%;
  }
 
-/* MODALS */
-
- .modal-dialog-centered {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    padding-bottom: 300px;
-    min-height: calc(100% - (.5rem * 2));
-     max-width: 400px !important;
-     margin: 1.75rem auto;
-}
-
-
 
 /* NAV & BUTTONS */
 .dropdown-menu {

@@ -3,3 +3,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* MODALS */
+
+ .modal-dialog-centered {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-bottom: 300px;
+    min-height: calc(100% - (.5rem * 2));
+     max-width: 400px !important;
+     margin: 1.75rem auto;
+}
+
+.modal-login{
+  text-align: center;
+  padding-top: 10px;
+}
+
+.modal-login-btn{
+  text-align: center;
+  padding-top: 20px;
+}
+
