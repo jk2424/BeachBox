@@ -34,7 +34,7 @@
   <p><%= flash[:error] %></p>
 </div>
 <% end %>
-<% end %>
+
 <p>Subtotal: $<%= @sub/100.00  %></p>
   <p>Your estimated delivery cost is $<%=@fee/100.00 %> </p>
 
@@ -51,3 +51,4 @@
   data-description="A month's subscription"
   data-amount="<%= @amount*100 %>"
   data-locale="auto"></script>
+<% end %>
