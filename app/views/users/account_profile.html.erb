@@ -6,27 +6,27 @@
   <%= form_for @user, url: user_path(:id => current_user.id), method: 'PATCH' do |f| %>
 
   <div>
-    <%= f.label :first_name, "First Name:", class: "col-sm-4" %>
-    <%= f.text_field :first_name, class: "col-sm-4" %>
+    <%= f.label :first_name, "First Name:", class: "col-lg-2 offset-lg-3 col-sm-10 offset-sm-1" %>
+    <%= f.text_field :first_name, class: "col-lg-4 offset-lg-0 col-sm-8 offset-sm-2" %>
   </div>
   <div>
-    <%= f.label :email, "Email: ", class: "col-sm-4" %>
-    <%= f.text_field :email, class: "col-sm-4" %>
+    <%= f.label :email, "Email: ", class: "col-lg-2 offset-lg-3 col-sm-10 offset-sm-1" %>
+    <%= f.text_field :email, class: "col-lg-4 offset-lg-0 col-sm-8 offset-sm-2" %>
   </div>
   <div>
-    <%= f.label :phone_number, "Phone Number: ", class: "col-sm-4" %>
-    <%= f.text_field :phone_number, class: "col-sm-4" %>    
+    <%= f.label :phone_number, "Phone Number: ", class: "col-lg-2 offset-lg-3 col-sm-10 offset-sm-1" %>
+    <%= f.text_field :phone_number, class: "col-lg-4 offset-lg-0 col-sm-8 offset-sm-2" %>    
   </div>
   <div>
-    <%= f.label :password, "Update Your Password: ", class: "col-sm-4" %>
-    <%= f.password_field :password, class: "col-sm-4" %>
+    <%= f.label :password, "Update Your Password: ", class: "col-lg-2 offset-lg-3 col-sm-10 offset-sm-1" %>
+    <%= f.password_field :password, class: "col-lg-4 offset-lg-0 col-sm-8 offset-sm-2" %>
   </div>
   <div>
-    <%= f.label :password_confirmation, "Confirm Password Update: ", class: "col-sm-4" %>
-    <%= f.password_field :password_confirmation, class: "col-sm-4" %>
+    <%= f.label :password_confirmation, "Confirm Password Update: ", class: "col-lg-2 offset-lg-3 col-sm-10 offset-sm-1" %>
+    <%= f.password_field :password_confirmation, class: "col-lg-4 offset-lg-0 col-sm-8 offset-sm-2" %>
   </div>
   <p></p>
-  <div>
+  <div class="button6">
     <%= f.submit "Update!", class: "btn btn-warning" %>
   </div>
 <% end %>
