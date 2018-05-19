@@ -1,4 +1,3 @@
-
 <div class="stepper">
 
   <div class="stepper-step stepper-step-isValid">
@@ -26,28 +25,31 @@
 
 
 
+<div id="cart-show-page1"> 
+  <%= form_tag cart_path do %>
 
-<%= form_tag cart_path do %>
-
-<% if flash[:error].present? %>
-<div id="error_explanation">
-  <p><%= flash[:error] %></p>
-</div>
-<% end %>
-<% end %>
-<p>Subtotal: $<%= @sub/100.00  %></p>
-  <p>Your estimated delivery cost is $<%=@fee/100.00 %> </p>
+  <% if flash[:error].present? %>
+  <div id="error_explanation">
+    <p><%= flash[:error] %></p>
+  </div>
+  <% end %>
+  <% end %>
+  <p><strong>Subtotal: </strong>$<%= @sub/100.00  %></p>
+  <p><strong>Your estimated delivery cost is</strong> $<%=@fee/100.00 %> </p>
 
   <div class="amount">
-    <span>Your Beach Box will cost you: $</span><%=@amount%>
+    <span><strong>Your Beach Box will cost you:</strong> $</span><%=@amount%>
   </div>
 
 
 
-  <%= link_to '<button type="button" class="btn btn-primary"">Back</button>'.html_safe, '/delivery' %>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
   data-description="A month's subscription"
   data-amount="<%= @amount*100 %>"
   data-locale="auto"></script>
+  <p></p>
+  <%= link_to '<button type="button" class="btn btn-warning"">Back</button>'.html_safe, '/delivery' %>
+  <p></p>
+</div>

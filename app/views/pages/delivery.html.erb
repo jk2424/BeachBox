@@ -33,12 +33,15 @@
 
 
 
-      <p><button onclick="geoFindMe()">Use my current location</button></p>
+      <p>
+        <div class="current-loc-btn">
+          <button class="btn btn-outline-info" onclick="geoFindMe()">Use my current location</button>
+        </div>
+      </p>
+          
+
+
       <div id="out">
-
-
-
-
         <form action = "cart/update" method="post" >
 
               Please enter your address
@@ -48,11 +51,12 @@
               <br>
               <input type="submit"/>
             </form>
-
-
       </div>
+
+
     </div>
-    <%= link_to '<button type="button" class="btn btn-primary"">Back</button>'.html_safe, '/buildbox' %>
+    
+    <div class="delivery-back-btn"><%= link_to '<button type="button" class="btn btn-warning">Back</button>'.html_safe, '/buildbox' %></div>
 
 </div>
 

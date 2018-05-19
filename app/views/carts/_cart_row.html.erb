@@ -1,43 +1,45 @@
-<div class="container">
-  <div class="row">
+<div id="cart-show-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+
+  <%= form_for order_item, remote: true do |f| %>
+
+      <h4><%= product.product_name %></h4>
+
+      <div>Unit Price: <span style="color: green"><%= number_to_currency order_item.unit_price %></span></div>
+
+
+    </div>
+    <div class="col-sm-1" id="order-count">
+
+      <%= f.number_field :orderitems_quantity, value: order_item.orderitems_quantity.to_i, class: "form-control number qty", min: 0 %>
+      <%= f.hidden_field :product_id, value: product.id %>
+
+    </div>
     <div class="col-sm">
 
-<%= form_for order_item, remote: true do |f| %>
 
-    <h4><%= product.product_name %></h4>
+      <%= f.submit "Update", class: "btn btn-info btn-md"%>
+      <%= link_to(
+        "Delete",
+        order_item,
+        method: :delete,
+        action: :remove,
+        remote: true,
+        data: { confirm: 'Are you sure?'},
+        class: "btn btn-danger btn-md",
+          id: "danger"
+          ) %>
+          
+          <div>
+            <p class="subtotal">Total Price: <span style="color: green"><%= number_to_currency order_item.total_price %></span></p>
+          </div>
 
-    <div>Unit Price: <span style="color: green"><%= number_to_currency order_item.unit_price %></span></div>
-
-
-  </div>
-  <div class="col-sm">
-
-    <%= f.number_field :orderitems_quantity, value: order_item.orderitems_quantity.to_i, class: "form-control number qty", min: 0 %>
-    <%= f.hidden_field :product_id, value: product.id %>
-
-  </div>
-  <div class="col-sm">
-
-
-    <%= f.submit "Update", class: "btn btn-info btn-md"%>
-    <%= link_to(
-      "Delete",
-      order_item,
-      method: :delete,
-      action: :remove,
-      remote: true,
-      data: { confirm: 'Are you sure?'},
-      class: "btn btn-danger btn-md",
-        id: "danger"
-        ) %>
-        
-        <div>
-          <p class="subtotal">Total Price: <span style="color: green"><%= number_to_currency order_item.total_price %></span></p>
         </div>
-
       </div>
-    </div>
-    </div>
+      </div>
 
 
-    <% end %>
+      <% end %>
+</div>

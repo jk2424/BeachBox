@@ -195,7 +195,7 @@
    float: left;
  }
 
- .btn-info{
+/* .btn-info{
    height: 40px;
    float: left;
  }
@@ -203,7 +203,7 @@
  .btn-danger{
    height: 40px;
  }
-
+*/
 
 
  .control-label{
@@ -347,7 +347,20 @@
 
 
 /* BUTTONS */
-.delivery-buttons{
+
+
+.btn-danger {
+  background: #FF4E20;
+}
+
+
+/* DELIVERY PAGE STYLES */
+
+#out{
+  text-align: center;
+}
+
+.delivery-back-btn{
   text-align: center;
 }
 
@@ -355,8 +368,7 @@
   background: #CDECF5;
 }
 
-.btn-danger {
-  background: #FF4E20;
+.current-loc-btn{
+  text-align: center;
 }
-
  // Panel 3
