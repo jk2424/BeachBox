@@ -29,6 +29,11 @@
 
 #cart-show-page1{
   text-align: center;
+    padding:40px;
+  background-image: image-url("ocean.jpg");
+  background-size: 100% 100%;
+  color: white;
+  font-size: 1.5em;
 }
 
 #order-count{
@@ -71,4 +76,8 @@
 
 .thank-you-btn{
   text-align: center;
+}
+
+.stripe-button{
+
 }

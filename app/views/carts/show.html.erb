@@ -28,10 +28,10 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Your Beach Box will cost you: $</span><%=@amount%>
+      <span><strong>Your Beach Box will cost you:</strong> $</span><%=@amount%>
     </label>
-    <p>Subtotal: $<%= @sub/100.00  %></p>
-    <p>Your estimated delivery cost is $<%= @fee/100.00 %> </p>
+    <p><strong>Subtotal:</strong> $<%= @sub/100.00  %></p>
+    <p><strong>Your estimated delivery cost is:</strong> $<%= @fee/100.00 %> </p>
   </article>
   <p></p>
   <%= link_to '<button type="button" class="btn btn-warning">Back</button>'.html_safe, '/delivery' %>
