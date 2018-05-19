@@ -1,33 +1,38 @@
 
-  <div class="card-header" id="headingTwo">
+<div class="card-header" id="headingTwo">
+  <h4 class="panel-title" >
+    <div data-toggle="" aria-expanded="true" aria-controls="collapseTwo">
+      How many people?</div>
+    </h4>
+  </div>
 
+  <!-- Panel 2 body -->
+  <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+    <div class="card-body" >
 
-      <h4 class="panel-title" >
-        <div data-toggle="" aria-expanded="true" aria-controls="collapseTwo">
-          How many people?</div>
-      </h4>
+      <div class="form-group">
+        <br>
+        <div class="counter-adult">
 
-    </div>
+          <div class="control-label"><strong>Adult</strong> <i> (above 13)</i></div>
+          <br>
 
-    <!-- Panel 2 body -->
-    <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-      <div class="card-body" >
+          <div class="counter"><div class="input-group number-spinner">
 
-<div class="form-group">
-<br>
-          <div class="counter-adult">
+            <span class="input-group-btn">
+              <a class="btn btn-outline-info" data-dir="dwn"><i class="fas fa-minus"></i></a>
+            </span>
 
-            <div class="control-label"><strong>Adult</strong> <i> (above 13)</i></div>
-<br>
-            <div class="counter"><div class="input-group number-spinner">
-              <span class="input-group-btn">
-                <a class="btn btn-outline-info" data-dir="dwn"><i class="fas fa-minus"></i></a>
-              </span>
-              <input type="text" disabled name="adult" id="adult" class="form-control text-center" value="1" max=9 min=1>
-              <span class="input-group-btn">
-                <a class="btn btn-info" data-dir="up"><i class="fas fa-plus"></i></a>              </span>
+            <input type="text" disabled name="adult" id="adult" class="form-control text-center" value="1" max=9 min=1>
+
+            <span class="input-group-btn">
+              <a class="btn btn-info" data-dir="up"><i class="fas fa-plus"></i></a>
+            </span>
+
             </div>
+
           </div>
+
           <br><br>
         </div>
 
@@ -51,14 +56,14 @@
         </div>
 
 
-<br>
-<br>
-<br>
-<div class="buttons-p2">
+        <br>
+        <br>
+        <br>
+        <div class="buttons-p2">
 
-      <span data-tooltip="  Changes will be lost."><button type="button" class="btn btn-warning" id="back-to-1">Back</button></span>
-      <button type="button" class="btn btn-outline-warning" id="entered-quantity" value='hide/show'>Next</button>
-</div>
+          <span data-tooltip="  Changes will be lost."><button type="button" class="btn btn-warning" id="back-to-1">Back</button></span>
+          <button type="button" class="btn btn-outline-warning" id="entered-quantity" value='hide/show'>Next</button>
+        </div>
+      </div>
     </div>
   </div>
-</div>

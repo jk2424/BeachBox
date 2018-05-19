@@ -1,31 +1,22 @@
+<div class="card-header" id="headingThree">
+  <h4 class="panel-title">
+    <div data-toggle="" aria-expanded="true" aria-controls="collapseTwo">
+      Here's what you need...</div>
+    </h4>
+  </div>
 
+  <!-- Panel 3 body -->
+  <div  class="collapse" aria-labelledby="headingThree" data-parent="#accordion" id="collapse3">
+    <div class="card-body">
+      <div class="product-list">
+        <% @products.each do |product| %>
+        <%= render "product_row", product: product, order_item: @order_item %>
+        <% end %>
+      </div>      
 
-  <div class="card-header" id="headingThree">
-    <h4 class="panel-title">
-      <div data-toggle="" aria-expanded="true" aria-controls="collapseTwo">
-        Here's what you need...</div>
-      </h4>
     </div>
-
-    <!-- Panel 3 body -->
-    <div  class="collapse" aria-labelledby="headingThree" data-parent="#accordion" id="collapse3">
-      <div class="card-body">
-
-
-        <div class="product-list">
-
-          <% @products.each do |product| %>
-
-          <%= render "product_row", product: product, order_item: @order_item %>
-          <% end %>
-        </div>
-
-
-
-
-      </div>
-      <span data-tooltip="  Changes will be lost.">
-        <button type="button" class="btn btn-warning" id="back-to-2">Back</button>
-      </span>
-      <%= link_to '<button type="button" class="btn btn-outline-warning cart-update">Next</button>'.html_safe, '/delivery' %>
-    </div>
+    <span data-tooltip="  Changes will be lost.">
+      <button type="button" class="btn btn-warning" id="back-to-2">Back</button>
+    </span>
+    <%= link_to '<button type="button" class="btn btn-outline-warning cart-update">Next</button>'.html_safe, '/delivery' %>
+  </div>

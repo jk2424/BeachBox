@@ -1,19 +1,19 @@
 function geoFindMe() {
+
   var output = document.getElementById("out");
   $("#enteraddress").hide();
   if (!navigator.geolocation){
     output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
     return;
   }
-    navigator.geolocation.getCurrentPosition(success, error);
-    output.innerHTML = "<p>Locating…</p>";
+
+  navigator.geolocation.getCurrentPosition(success, error);
+  output.innerHTML = "<p>Locating…</p>";
 
   function success(position) {
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
 
-    //# <%# @latitude1 = position.coords.latitude %>
-    //# <%#= p @latitude1 %>
 
     output.innerHTML = " ";
     var latLng = new google.maps.LatLng(latitude, longitude);
@@ -23,8 +23,10 @@ function geoFindMe() {
       map: window.map,
       position: latLng
     });
+
     window.map.setCenter(latLng);
     $('#map').fadeIn(1000);
+    
     $.ajax(
       `https://us1.locationiq.org/v1/reverse.php?key=979e5fe5b2c531&lat=${latitude}&lon=${longitude}&format=json`
       // "https://us1.locationiq.org/v1/reverse.php?key=979e5fe5b2c531&lat=" + latitude + "&lon=" + longitude + "&format=json"

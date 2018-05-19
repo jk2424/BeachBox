@@ -10,15 +10,7 @@ class CartsController < ApplicationController
     render :show, locals: {fee: @fee}
   end
 
-  # def new(delivery_params)
-  #   @pin = delivery_params.street_address
-  #
-  # end
-
-
   def create
-    # Amount in cents
-
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail]
     )
@@ -42,7 +34,5 @@ class CartsController < ApplicationController
     p params
     params.permit(:street_address)
   end
-
-
 
 end

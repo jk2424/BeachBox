@@ -70,23 +70,23 @@
  }
 
  // Connector line
- // .stepper-step {
- //     &::after {
- //         content: '';
- //         position: absolute;
- //         bottom: 36px;
- //         left: 0;
- //         right: 0;
- //         height: 1px;
- //         background: $grey-400;
- //     }
- //     &:first-child::after {
- //         left: 24px;
- //     }
- //     &:last-child::after {
- //         right: 24px;
- //     }
- // }
+ .stepper-step {
+     &::after {
+         content: '';
+         position: absolute;
+         bottom: 36px;
+         left: 0;
+         right: 0;
+         height: 1px;
+         background: $grey-400;
+     }
+     &:first-child::after {
+         left: 24px;
+     }
+     &:last-child::after {
+         right: 24px;
+     }
+ }
 
  .stepper-step-isActive {
      font-weight: 600;
@@ -139,12 +139,6 @@
 
 
  // ***** BOOTSTRAP ACCORDION
-//
-// .productphotos{
-//   height: 300px;
-//   width: 300px
-//
-// }
 
 #collapse3{
   padding-bottom: 30px;
@@ -166,18 +160,11 @@
    margin:20px;
  }
 
-
-
  .item-grouping{
-
-
-
  }
 
  .item-view{
-
  }
-
 
  .number-spinner{
    float: right;
@@ -185,26 +172,13 @@
 
  .control-label{
    width:100%;
-
  }
 
 
  .counter{
-
    height:40px;
    float: left;
  }
-
-/* .btn-info{
-   height: 40px;
-   float: left;
- }
-
- .btn-danger{
-   height: 40px;
- }
-*/
-
 
  .control-label{
    font-size: 20px;
@@ -216,14 +190,12 @@
 
  .card-image {
    padding-top: 25px;
-   // background-image: url('/Miami-beach.jpg');
  }
 
  .card {
    width: 100%;
    position: relative;
    text-align: center;
-
  }
 
  .panel-heading div{
@@ -248,9 +220,6 @@
  .accordion.accordion-5 .card .card-body {
  border-bottom-right-radius: 3px;
  border-bottom-left-radius: 3px; }
-
-
-
 
  [data-tooltip],
  .tooltip {
@@ -371,4 +340,3 @@
 .current-loc-btn{
   text-align: center;
 }
- // Panel 3

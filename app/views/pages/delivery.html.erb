@@ -1,34 +1,32 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
 
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
-
-  <!-- <meta charset="utf-8"> -->
   <title>BuildBox</title>
 </head>
 <body>
 
   <div class="stepper">
 
-      <div class="stepper-step stepper-step-isValid">
-        <div class="stepper-stepContent">
-          <span class="stepper-stepMarker">1</span>Build Your Box
-        </div>
-      </div>
-      <div class="stepper-step stepper-step-isActive">
-        <div class="stepper-stepContent">
-          <span class="stepper-stepMarker">2</span>Delivery
-        </div>
-      </div>
-      <div class="stepper-step stepper-step-isActive">
-        <div class="stepper-stepContent">
-          <span class="stepper-stepMarker">3</span>Checkout
-        </div>
+    <div class="stepper-step stepper-step-isValid">
+      <div class="stepper-stepContent">
+        <span class="stepper-stepMarker">1</span>Build Your Box
       </div>
     </div>
+    <div class="stepper-step stepper-step-isActive">
+      <div class="stepper-stepContent">
+        <span class="stepper-stepMarker">2</span>Delivery
+      </div>
+    </div>
+    <div class="stepper-step stepper-step-isActive">
+      <div class="stepper-stepContent">
+        <span class="stepper-stepMarker">3</span>Checkout
+      </div>
+    </div>
+  </div>
 
 <h1>Delivery Details</h1>
 
@@ -40,6 +38,7 @@
     <div class="google_map">
       <div id="map"></div>
     </div>
+
 <div id="addressinputs">
         <form action = "cart/update" method="post">
 
@@ -60,4 +59,4 @@
 </div>
   </body>
 
-  </html>
+</html>

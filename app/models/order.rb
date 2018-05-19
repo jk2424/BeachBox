@@ -5,7 +5,6 @@ class Order < ApplicationRecord
   before_save :update_subtotal
 
   def subtotal
-
    order_items.collect { |oi| oi.valid? ? (oi.orderitems_quantity * oi.unit_price) : 0 }.sum
   end
 
