@@ -28,12 +28,21 @@ form{
   padding-top: 20px;
 }
 
-#deliverycontent{
+#delivery-content{
   padding:40px;
+  background-image: image-url("ocean.jpg");
+  background-size: 100% 100%;
 }
+
 
 #backtobuild{
   margin: 0 auto;
     width: 20%;
     min-width: 200px;
+}
+
+.delivery-back-btn{
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }

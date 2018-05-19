@@ -30,29 +30,30 @@
         </div>
       </div>
     </div>
-
-<div id="deliverycontent">
+<div id="delivery-content">
+  <div class="delivery-content"></div>
     <div id="out">
-    <p><button onclick="geoFindMe()" id=#button5>Use my current location</button></p>
+    <p><button class="btn btn-outline-info" onclick="geoFindMe()" id=#button5>Use my current location</button></p>
     </div>
     <div class="google_map">
-    <div id="map"></div>
+      <div id="map"></div>
     </div>
 
 <div id="addressinputs">
         <form action = "cart/update" method="post">
 
-              <div id="enteraddress">Or, enter your address:</div>
+              <div id="enteraddress"><font color="white"><strong>Or, enter your address:</strong></font></div>
               <br>
               <input type="text"  id="geoaddress" name="street_address" required placeholder="ex. 549, NW 28th St, Miami, FL"/>
               <br>
               <br>
-              <input type="submit" value="Confirm Address & Checkout"/>
+              <input class="btn btn-outline-info" type="submit" value="Confirm Address & Checkout"/>
             </form>
       </div>
-
-
-    <%= link_to '<button type="button" class="btn btn-primary"" id="backtobuild">Back to Build BeachBox</button>'.html_safe, '/buildbox' %>
+      <p></p>
+      <div class="delivery-back-btn">
+        <%= link_to '<button type="button" class="btn btn-warning" id="backtobuild">Back to Build-A-BeachBox</button>'.html_safe, '/buildbox' %>
+      </div>
 </div>
   </body>
 
