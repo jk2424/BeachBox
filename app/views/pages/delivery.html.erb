@@ -1,59 +1,55 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
 
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
-
-  <!-- <meta charset="utf-8"> -->
   <title>BuildBox</title>
 </head>
 <body>
 
-
   <div class="stepper">
 
-      <div class="stepper-step stepper-step-isValid">
-        <div class="stepper-stepContent">
-          <span class="stepper-stepMarker">1</span>Build Your Box
-        </div>
-      </div>
-      <div class="stepper-step stepper-step-isActive">
-        <div class="stepper-stepContent">
-          <span class="stepper-stepMarker">2</span>Delivery
-        </div>
-      </div>
-      <div class="stepper-step stepper-step-isActive">
-        <div class="stepper-stepContent">
-          <span class="stepper-stepMarker">3</span>Checkout
-        </div>
+    <div class="stepper-step stepper-step-isValid">
+      <div class="stepper-stepContent">
+        <span class="stepper-stepMarker">1</span>Build Your Box
       </div>
     </div>
+    <div class="stepper-step stepper-step-isActive">
+      <div class="stepper-stepContent">
+        <span class="stepper-stepMarker">2</span>Delivery
+      </div>
+    </div>
+    <div class="stepper-step stepper-step-isActive">
+      <div class="stepper-stepContent">
+        <span class="stepper-stepMarker">3</span>Checkout
+      </div>
+    </div>
+  </div>
 
-<div id="deliverycontent">
+  <div id="deliverycontent">
     <div id="out">
-    <p><button onclick="geoFindMe()" id=#button5>Use my current location</button></p>
+      <p><button onclick="geoFindMe()" id=#button5>Use my current location</button></p>
     </div>
     <div class="google_map">
-    <div id="map"></div>
+      <div id="map"></div>
     </div>
 
-<div id="addressinputs">
-        <form action = "cart/update" method="post">
+    <div id="addressinputs">
+      <form action = "cart/update" method="post">
 
-              <div id="enteraddress">Or, enter your address:</div>
-              <br>
-              <input type="text"  id="geoaddress" name="street_address" required placeholder="ex. 549, NW 28th St, Miami, FL"/>
-              <br>
-              <br>
-              <input type="submit" value="Confirm Address & Checkout"/>
-            </form>
-      </div>
-
+        <div id="enteraddress">Or, enter your address:</div>
+        <br>
+        <input type="text"  id="geoaddress" name="street_address" required placeholder="ex. 549, NW 28th St, Miami, FL"/>
+        <br>
+        <br>
+        <input type="submit" value="Confirm Address & Checkout"/>
+      </form>
+    </div>
 
     <%= link_to '<button type="button" class="btn btn-primary"" id="backtobuild">Back to Build BeachBox</button>'.html_safe, '/buildbox' %>
-</div>
-  </body>
+  </div>
+</body>
 
-  </html>
+</html>

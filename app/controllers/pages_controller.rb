@@ -23,10 +23,8 @@ class PagesController < ApplicationController
       @order_item.update_attribute(:orderitems_quantity, order_item_params[:orderitems_quantity])
     end
 
-
-
-
   end
+
   def index
     @products = Product.all
     @order_item = current_order.order_items.new

@@ -1,4 +1,5 @@
 class OrderItemsController < ApplicationController
+
   def create
     if @order = current_order
     @order.status = OrderStatus.in_progress.id    if params.key?("multiple_items")
@@ -10,10 +11,12 @@ class OrderItemsController < ApplicationController
         ot.product_id = product["product_id"]
         ot.save!
       end
+
     else
       @order_item = @order.order_items.new(order_item_params)
       @order.save
     end
+
     session[:order_id] = @order.id
     respond_to do |format|
       format.json { render json: { success: true } }
@@ -39,16 +42,6 @@ class OrderItemsController < ApplicationController
     @order_item.destroy
     redirect_to cart_path
   end
-
-
-#   def destroy
-#   order = session['order']
-#   item = order['items'].find { |item| item['product_id'] == params[:id] }
-#   if item
-#     cart['items'].delete item
-#   end
-#   redirect_to cart_path
-# end
 
   private
 

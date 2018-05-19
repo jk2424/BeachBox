@@ -3,11 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   skip_before_action :verify_authenticity_token
 
-
-
   helper_method :current_order
-
-
 
   def current_order
     unless session[:order_id].nil?
@@ -17,10 +13,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
-  # ----- add these lines here: -----
-
-  # Make the current_user method available to views also, not just controllers:
   helper_method :current_user
 
   # Define the current_user method:
@@ -50,7 +42,7 @@ class ApplicationController < ActionController::Base
               }
 
     $client.create(package)
-  end
 
+  end
 
 end

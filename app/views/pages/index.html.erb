@@ -11,56 +11,47 @@
 <body>
 
 
-  <!-- <div class="container"> -->
-    <div class="stepper">
 
-        <div class="stepper-step stepper-step-isValid">
-          <div class="stepper-stepContent">
-            <span class="stepper-stepMarker">1</span>Build Your Box
-          </div>
-        </div>
-        <div class="stepper-step stepper-step-isActive">
-          <div class="stepper-stepContent">
-            <span class="stepper-stepMarker">2</span>Delivery
-          </div>
-        </div>
-        <div class="stepper-step stepper-step-isActive">
-          <div class="stepper-stepContent">
-            <span class="stepper-stepMarker">3</span>Checkout
-          </div>
-        </div>
+  <div class="stepper">
+
+    <div class="stepper-step stepper-step-isValid">
+      <div class="stepper-stepContent">
+        <span class="stepper-stepMarker">1</span>Build Your Box
+      </div>
+    </div>
+    <div class="stepper-step stepper-step-isActive">
+      <div class="stepper-stepContent">
+        <span class="stepper-stepMarker">2</span>Delivery
+      </div>
+    </div>
+    <div class="stepper-step stepper-step-isActive">
+      <div class="stepper-stepContent">
+        <span class="stepper-stepMarker">3</span>Checkout
+      </div>
+    </div>
+  </div>
+
+
+  <div id="stepper-content">
+    <div id="accordion1">
+
+      <div class="card" id="accordion">
+
+        <!-- ACCORDION PANEL 1 (family/adults)-->
+        <%= render 'panel1' %>
+
+        <!-- ACCORDION PANEL 2 (# people) -->
+        <%= render 'panel2' %>
+
+        <!-- ACCORDION PANEL 3 (cart) -->
+        <%= render 'panel3' %>
+
+
       </div>
 
-
-
-
-
-
-
-      <div id="stepper-content">
-        <div id="accordion1">
-
-
-
-          <div class="card" id="accordion">
-
-            <!-- ACCORDION PANEL 1 (family/adults)-->
-            <%= render 'panel1' %>
-
-            <!-- ACCORDION PANEL 2 (# people) -->
-            <%= render 'panel2' %>
-
-            <!-- ACCORDION PANEL 3 (cart) -->
-            <%= render 'panel3' %>
-
-
-
-          </div>
-
-
-</div>
-
     </div>
+
+  </div>
 
 
 

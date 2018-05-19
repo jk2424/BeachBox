@@ -19,13 +19,13 @@
 
 <%= render "shopping_cart" %>
 
-<div id="cart-show-page1"> 
-<%= form_tag cart_path do %>
+<div id="cart-show-page1">
+  <%= form_tag cart_path do %>
   <article>
     <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
+    <div id="error_explanation">
+      <p><%= flash[:error] %></p>
+    </div>
     <% end %>
     <label class="amount">
       <span>Your Beach Box will cost you: $</span><%=@amount%>
@@ -33,13 +33,17 @@
     <p>Subtotal: $<%= @sub/100.00  %></p>
     <p>Your estimated delivery cost is $<%= @fee/100.00 %> </p>
   </article>
+
   <p></p>
   <%= link_to '<button type="button" class="btn btn-warning">Back</button>'.html_safe, '/delivery' %>
   <p></p>
+
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Beach Box"
-          data-amount="<%= @amount*100 %>"
-          data-locale="auto"></script>
-<% end %>
+  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+  data-description="Beach Box"
+  data-amount="<%= @amount*100 %>"
+  data-locale="auto"></script>
+  
+  <% end %>
+
 </div>

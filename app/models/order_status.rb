@@ -6,5 +6,4 @@ class OrderStatus < ApplicationRecord
     @in_progress ||= find_by(name: 'In Progress')
   end
 
-
 end

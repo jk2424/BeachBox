@@ -16,10 +16,6 @@ class OrderItem < ActiveRecord::Base
     end
   end
 
-  # def total_price
-  #   unit_price * orderitems_quantity
-  # end
-
 private
   def product_present
     if product.nil?
