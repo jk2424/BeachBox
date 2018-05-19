@@ -1,16 +1,17 @@
 function geoFindMe() {
   var output = document.getElementById("out");
-
+  $("#enteraddress").hide();
   if (!navigator.geolocation){
     output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
     return;
   }
     navigator.geolocation.getCurrentPosition(success, error);
     output.innerHTML = "<p>Locating…</p>";
+
   function success(position) {
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
-    console.log(latitude, longitude);
+
     //# <%# @latitude1 = position.coords.latitude %>
     //# <%#= p @latitude1 %>
 
