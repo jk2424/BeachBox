@@ -6,12 +6,14 @@ class CartsController < ApplicationController
     @order = current_order
     @amount = @sub/100.00 + params[:fee].to_i/100.00
     @fee = params[:fee].to_i
+    current_order.update(tax: @fee.to_f)
+    render :show, locals: {fee: @fee}
   end
 
-  def new(delivery_params)
-    @pin = delivery_params.street_address
-
-  end
+  # def new(delivery_params)
+  #   @pin = delivery_params.street_address
+  #
+  # end
 
 
   def create
@@ -30,7 +32,7 @@ class CartsController < ApplicationController
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
-    redirect_to new_charge_path
+    render 'create'
   end
 
 

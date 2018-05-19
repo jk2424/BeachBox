@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   resources :products, only: [:index]
-  resource :cart, only: [:show, :new, :create]
+  resource :cart
   resources :order_items, only: [:create, :update, :destroy]
   resources :pages
   get '/cart/show' => 'carts#show', as: :mycart
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 	get 'users/new' => 'users#new', as: :new_user
 	post 'users' => 'users#create'
   get '/users/account_profile' => 'users#account_profile', as: :account
+  get '/pages/thanks' => 'pages#thanks'
 
   patch '/users/update' => 'users#update', as: :user
 

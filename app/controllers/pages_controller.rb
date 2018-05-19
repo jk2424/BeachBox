@@ -14,6 +14,9 @@ class PagesController < ApplicationController
       session[:order_id] = @order.id
     end
 
+    def show
+    end
+
     def update
       @order = current_order
       @order_item = @order.order_items.find(params[:id])

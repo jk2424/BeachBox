@@ -115,6 +115,7 @@ function getNumAdult(){
   var numAdult = $("#adult").val()
   console.log(numAdult)
 
+
 };
 
 function getNumChild(){
@@ -134,19 +135,18 @@ function pushAdultBase(){
   var numAdult = Math.ceil($("#adult").val()/8)
   console.log(numAdult)
   $( "#adult_suncreen_qty" ).val(numAdult);
-  var numAdult = Math.ceil($("#adult").val()/2)
-  console.log(numAdult)
-  $( "#umbrella_qty" ).val(numAdult);
+
+
 
 };
 
 function pushChildBase(){
+
   var numChild = Math.ceil($("#child").val()/8)
   console.log(numChild)
   $( "#children_sunscreen_qty" ).val(numChild);
-  var numChild = Math.ceil($("#child").val()/2)
-  console.log(numChild)
-  $( "#umbrella_qty" ).val(numChild);
+
+
 
 };
 
@@ -157,6 +157,7 @@ function pushFamilyBase(){
   console.log(getNumFam)
   $( "#towel_qty" ).val(getNumFam);
   $( "#chair_qty" ).val(getNumFam);
+  $( "#umbrella_qty" ).val(Math.ceil(getNumFam/2));
 
 
 };
