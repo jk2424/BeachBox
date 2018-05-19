@@ -31,26 +31,29 @@
       </div>
     </div>
 
+<div id="deliverycontent">
     <div id="out">
-    <p><button onclick="geoFindMe()">Use my current location</button></p>
+    <p><button onclick="geoFindMe()" id=#button5>Use my current location</button></p>
     </div>
     <div class="google_map">
     <div id="map"></div>
     </div>
 
+<div id="addressinputs">
         <form action = "cart/update" method="post">
 
-              Please enter your address
+              <div id="enteraddress">Or, enter your address:</div>
               <br>
-              <input type="text"  id="geoaddress" name="street_address" required />
+              <input type="text"  id="geoaddress" name="street_address" required placeholder="ex. 549, NW 28th St, Miami, FL"/>
               <br>
               <br>
-              <input type="submit"/>
+              <input type="submit" value="Confirm Address & Checkout"/>
             </form>
       </div>
 
-    <%= link_to '<button type="button" class="btn btn-primary"">Back</button>'.html_safe, '/buildbox' %>
 
+    <%= link_to '<button type="button" class="btn btn-primary"" id="backtobuild">Back to Build BeachBox</button>'.html_safe, '/buildbox' %>
+</div>
   </body>
 
   </html>
