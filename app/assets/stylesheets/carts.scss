@@ -62,8 +62,9 @@
 
  .thank-you h2{
   text-align: center;
-  font-size: 3em;
+  font-size: 2em;
   color: #FF4E20;
+  font-style: italic;
  }
 
  .thank-you h5{
@@ -72,6 +73,11 @@
   color: white;
   font-style: italic;
  }
+
+.thank-you-btn img{
+  width: 20%;
+  // filter: invert(120%);
+}
 
 .thank-you-btn{
   text-align: center;
