@@ -1,24 +1,32 @@
-# README
+A NEW TYPE OF SHOPPING CART.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+We built a cart that auto-populates the quantities of each item in the BeachBox package, based on the number and types of people in your group.
 
-Things you may want to cover:
+SEE IT LIVE: www.beachbox.herokuapp.com
+ 
+ Tech____
+ Ruby
+ Ruby on Rails
+ JavaScript (JQuery, AJAX)
+ Bootstrap
+ HTML & CSS
+ BCrypt
 
-* Ruby version
+ 
+ APIs___
+ Stripe
+ Geocoder
+ Location IQ
+ Postmates
 
-* System dependencies
 
-* Configuration
+Division of labor____
 
-* Database creation
+Jk2424 (github.com/jk2424)
+Shopping cart (Ruby on Rails, JavaScript), Buildbox feature (JavaScript, Bootstrap), API integration (Location IQ)
 
-* Database initialization
+OlehZavodenko (github.com/OlehZavodenko)
+API integrations (Stripe, Geocoder, Postmates, Ruby on Rails)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Steph-Oli (github.com/steph-oli)
+Design (HTML, CSS & Bootstrap), Login feature (BCrypt), User pages (HTML, CSS, Bootstrap, Ruby on Rails)
