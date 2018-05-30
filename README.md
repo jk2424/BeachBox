@@ -1,3 +1,8 @@
+Forked to continue improvements on a group project.
+
+
+
+
 A NEW TYPE OF SHOPPING CART.
 
 We built a cart that auto-populates the quantities of each item in the BeachBox package, based on the number and types of people in your group.
